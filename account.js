@@ -25,10 +25,10 @@ function checkAccount(){
     console.log(user);
     if (user=="" || pass==""){
         const newAccount = new Account(user,pass);
-        element2.textContent="Account info invalid.";
+        //element2.textContent="Account info invalid.";
         console.log("Account info invalid.");
     } else {
-        element2.textContent="Account created!";
+        //element2.textContent="Account created!";
         console.log("Account created!");
     }
 }
