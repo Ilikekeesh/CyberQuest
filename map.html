@@ -10,39 +10,41 @@
     </header>
     <nav>
         <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Map</a></li>
-            <li><a href="classroom.html">Classroom</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html"><div style="font-size: 2.8vw;">About</div></a></li>
+            <li><a href="#"><div style="font-size: 2.8vw;">Map</div></a></li>
+            <li><a href="classroom.html"><div style="font-size: 2.8vw;">Classroom</div></a></li>
+            <li><a href="shop.html"><div style="font-size: 2.8vw;">Shop</div></a></li>
+            <li><a href="login.html"><div style="font-size: 2.8vw;">Login</div></a></li>
         </ul>
     </nav>
-     <section>
+     <aside>
+        <canvas id="myCanvas" style="width: 100%; height: 100%;">
+            Sorry, your browser does not support canvas.
+        </canvas>
+    
+        <script>
+            // Create a canvas:
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
 
-    </section>
-    <aside>
-        <p>
-            <h2>Unit 1</h2>
-        </p>
-        <ul>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-            <li><h2>Level 1.1</h2></li>
-        </ul>
+            // Define a new path:
+            ctx.beginPath();
 
+            // Define a start point
+            
+
+            // Define points
+            ctx.arc(90,100,4,0,2*Math.PI)
+
+            // Draw it
+            ctx.stroke();
+        </script>
+    
     </aside>
     <footer>
         <div style="margin-left: 2%;">Team Phishify</div>
     </footer>
-
-</body>
-
-</html>
+    
+    </body>
+    
+    </html>

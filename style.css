@@ -1,4 +1,6 @@
- header {
+ html { overflow-y: scroll; }
+
+header {
      position: fixed;
      background-color: #FDF9D8;
      top: 0px;
@@ -10,55 +12,64 @@
  nav {
      margin-top: 0px;
      margin-bottom: 0px;
-     height: 50px;
+     height: 7%;
+     min-height: 55px;
      background-color: #DE812A;
      flex-direction: row;
+     z-index: 3;
  }
 
  nav li {
      display: inline;
      float: left;
-     font-size: xx-large;
-     margin-top: 4px;
-     margin-left: 11%;
+     font-size: 17px;
+     margin-top: .4%;
+     margin-left: 10%;
+     z-index: 2;
  }
 
  nav li:hover {
      background-color: #B39DBE;
+     z-index: 3;
  }
 
  section {
      float: left;
      width: 12%;
-     height: 650px;
+     height: 80%;
      background-color: #48093E;
      color: white;
+     z-index: 2;
  }
 
  aside {
      float: left;
      width: 88%;
-     height: 650px;
+     height: 80%;
      background-color: #FDF9D8;
+     z-index: 1;
  }
 
  footer {
      clear: both;
      background-color: #B39DBE;
+     z-index: 2;
  }
 
  body {
      background-color: #2D3047;
      margin: 0px;
+     z-index: 2;
  }
 
  h1 {
      color: #48093E;
-     font-size: 70px;
-     margin-left: 20px;
+     font-size: 5vw;
+     margin-left: 2.5%;
  }
  p{
-    margin-left: 20px;
-    margin-right: 50px;
+    margin-left: 2%;
+    margin-right: 3%;
     font-size: 25px;
  }
+
