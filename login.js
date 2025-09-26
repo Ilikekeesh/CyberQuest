@@ -2,7 +2,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js"; 
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js"; 
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -46,3 +46,22 @@
                 // ..
             });
         })
+
+        const forgotPassword = document.getElementById('forgotPassword');
+        forgotPassword.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            if (email === "") {
+                alert("Please enter your email first.");
+                return;
+            }
+
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    alert("Password reset email sent! Check your inbox.");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        });
