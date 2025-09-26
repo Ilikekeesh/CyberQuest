@@ -1,4 +1,4 @@
-let temppoint=8;
+var temppoint;
 if(document.getElementById("pointsTag")!=null){
     document.getElementById("pointsTag").textContent=temppoint;
     console.log(temppoint);
@@ -11,6 +11,7 @@ class Account {
         this.email = mail;
         this.points = 0;
         temppoint=this.points;
+        console.log(temppoint)
     }
     checkPoints(check) { //Sees if the player's points are equal/greater than check, and returns true. false otherwise.
         if (check >= this.points) {
@@ -24,7 +25,6 @@ class Account {
 if(document.getElementById("confirmInfo")!=null){
     const element = document.getElementById("confirmInfo");
     element.addEventListener("click", checkAccount);
-    const element2 = document.getElementById("creationInfo");
 }
 
 function checkAccount(){
@@ -36,7 +36,6 @@ function checkAccount(){
         console.log("Account info invalid.");
     } else {
         const newAccount = new Account(user,pass);
-        element2.textContent="Account created!";
         console.log("Account created!");
     }
 }
