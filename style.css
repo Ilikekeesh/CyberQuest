@@ -56,8 +56,6 @@ nav ul li a {
     transition: background 0.3s, transform 0.1s ease-out, color 0.2s;
 }
 
-
-
 nav ul li a.active {
     background: #ffb3ec;
     color: #000;
@@ -72,6 +70,13 @@ nav ul li a:hover {
 
 html {
     scroll-behavior: smooth;
+}
+
+button{
+    border-radius: 2%;
+    padding: .7rem;
+    background: linear-gradient(135deg, #f2b0f5, #e59cf6, #aabeb8, #c6f5ca);
+    border: 2px #f9b1ec;
 }
 
 /* Glassmorphism Panels with animated pink-green gradient */
@@ -157,6 +162,6 @@ aside {
     padding: 0.7rem 1rem;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.3);
-    background: linear-gradient(135deg, rgba(255,182,193,0.25), rgba(144,238,144,0.25));
+    background: linear-gradient(135deg, rgba(255,182,193,0.25), rgba(196, 224, 196, 0.25));
     background-size: 400%
 }
