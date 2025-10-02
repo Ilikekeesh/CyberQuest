@@ -11,33 +11,21 @@ body {
     line-height: 1.8;
     color: #fff;
     min-height: 100vh;
-    padding-top: 70px; /* prevents content from hiding under navbar */
+    padding-top: 70px;
 
-    /* Animated Purple Gradient Background */
-    background: linear-gradient(135deg, #c23eff, #770aa6, #510785, #3b0065);
+    /* Animated Purple-Blue Background */
+    background: linear-gradient(135deg, #950fd3, #600c85, #2e2a87, #1e3c72);
     background-size: 300% 300%;
-    animation: purpleGradient 15s ease infinite;
+    animation: purpleGradient 18s ease infinite;
 }
 
-/* Gradient Animation Keyframes */
 @keyframes purpleGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* 🔥 Hotbar Navigation */
-header {
-    position: fixed; /* sticks to top */
-    top: 50;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 1rem 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-}
-
+/* Navigation Bar */
 nav ul {
     list-style: none;
     display: flex;
@@ -55,31 +43,44 @@ nav ul li a {
     transition: background 0.3s, transform 0.2s, color 0.3s;
 }
 
-/* Hover effect */
-nav ul li a:hover {
-    background: #d49fff;
-    color: #000;
-    transform: scale(1.1);
-}
 
-/* Active link style */
+
 nav ul li a.active {
-    background: #d49fff;
+    background: #ffb3ec;
     color: #000;
 }
 
-/* Smooth scrolling for navigation links */
 html {
     scroll-behavior: smooth;
 }
 
-/* Main Section */
-main {
-    width: 100%;
+/* Glassmorphism Panels with animated pink-green gradient */
+main, aside, footer {
+    background: linear-gradient(135deg,
+        rgba(255, 182, 193, 0.25),
+        rgba(144, 238, 144, 0.25),
+        rgba(255, 182, 193, 0.25)
+    );
+    background-size: 400% 400%;
+    animation: pinkGreenShift 30s ease infinite;
+
+    border-radius: 16px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem;
     margin: 2rem auto;
-    padding: 1rem 2rem;
+    max-width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
+@keyframes pinkGreenShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Headings */
 h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -95,36 +96,46 @@ p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
+/* Aside layout */
+aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+/* Logo top-left */
+.logo-top-left {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.logo-top-left .logo {
+    width: 128px;
+    height: 128px;
+}
+
+/* Centered login form */
+.login-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
-    font-weight: bold;
-    border-radius: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-    }
-
-    nav ul li a {
-        font-size: 1.1rem;
-        padding: 0.8rem 1.5rem;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-    }
+.login-center h1 {
+    margin-bottom: 2rem;
 }
+
+/* Login form spacing */
+.login-form input {
+    margin: 0.5rem 0;
+    display: block;
+    width: 220px;
+    padding: 0.7rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, rgba(255,182,193,0.25), rgba(144,238,144,0.25));
+    background-size: 400%
