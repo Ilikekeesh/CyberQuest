@@ -1,3 +1,12 @@
+:root { /*To my understanding, basically a dictionary for colors.
+    Call them using a format like "var(--dark)".
+     Might make it easier to switch color schemes more easily in the future, maybe let people buy themes?
+     Want to try to maybe move all colors over to this at some point.*/
+ --dark: #5c0068;
+
+}
+
+
 /* General Reset */
 * {
     margin: 0;
@@ -164,4 +173,12 @@ aside {
     border: 1px solid rgba(255,255,255,0.3);
     background: linear-gradient(135deg, rgba(255,182,193,0.25), rgba(196, 224, 196, 0.25));
     background-size: 400%
+}
+
+#loading {
+     width: 30%;
+     margin-top: 17px;
+     position:relative;
+     margin-left: 35%;
+     margin-top: 10%;
 }

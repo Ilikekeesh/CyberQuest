@@ -1,0 +1,21 @@
+.transition-1 { /*cool page transition box thingy*/
+position: fixed;
+top:100%;
+left:0;
+right:0;
+bottom:-100%;
+z-index:1001;
+align-content: left;
+background-color: var(--dark);
+/*pointer-events: none; */
+transition: 0.15s ease-out;
+background: linear-gradient(175deg, #aa27e7, #781fbc, #4f30ca, #394aba);
+background-size: 100%
+}
+
+.transition-1.is-active {
+    pointer-events: all;
+    top: 0px;
+}
+
+ 
