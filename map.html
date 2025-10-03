@@ -28,7 +28,7 @@
         }
 
         .map-point {
-            fill: #a5ddbb;
+            fill: #93f4e0;
             cursor: pointer;
         }
         
@@ -74,10 +74,10 @@
     <svg id="mySVG" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet"></svg>
 
     <div id="overlay-div">
-        <h2>Level X</h2>
+        <h2>Level <div id="level" style="display: inline-block;"></div></h2>
         <p>Lorem ipsum dolor sit amet.</p>
         <button style="float: right;" onclick="document.getElementById('overlay-div').style.display = 'none';">Close</button>
-        <button onclick="location.href='about.html';">Go!</button>
+        <button id="gobutton">Go!</button>
     </div>
 </div>
 
@@ -108,7 +108,7 @@
         circle.setAttribute("cx", p[0]);
         circle.setAttribute("cy", p[1]);
         circle.setAttribute("r", 4); // Radius
-        circle.setAttribute("data-index", index);
+        circle.setAttribute("data-index", index+1);
         circle.setAttribute("class", "map-point");
         
         // Add click behavior to the points
@@ -118,11 +118,14 @@
             const overlayDiv = document.getElementById('overlay-div');
             overlayDiv.style.display = 'block';
             console.log(`Clicked point at original coords: (${p[0]}, ${p[1]})`);
-            
+            console.log(circle.getAttribute("data-index"));
+            document.getElementById("level").innerHTML=circle.getAttribute("data-index");
+            const gob = document.getElementById("gobutton");
+            gob.addEventListener("click",go(circle.getAttribute("data-index")));
+            //location.href = '1'+circle.getAttribute("data-index")+'.html';
             // To navigate to a new page:
             // window.location.href = `page${index}.html`;
         });
-
         svg.appendChild(circle);
     });
 
@@ -131,6 +134,10 @@
     // The CSS on #map-container handles the 90% viewport height.
 
     // No need for a complex resize handler, as SVG handles resizing natively!
+    function go(ind){
+        console.log(ind);
+        location.href='1'+ind+'.html';
+    }
 </script>
 </aside>
     
