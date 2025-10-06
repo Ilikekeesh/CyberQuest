@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #600c85;
+}
+
 /* Fonts & Colors */
 body {
     font-family: Arial, Helvetica, sans-serif;
