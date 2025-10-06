@@ -2,19 +2,48 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transition.css">
     <style>
-        input::placeholder{
-            color:#93f4e0;
+        input::placeholder {
+            color: #93f4e0;
+        }
+
+        .login-toggle {
+            color: #93f4e0;
+            margin-top: 15px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* ✅ Center the login info on the page */
+        aside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 160px); /* Leaves space for header/footer */
+        }
+
+        .login-center {
+            text-align: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
-    <link rel="stylesheet" href="transition.css">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo-top-left">
-            <img src="whitelogo.png" alt="CyberQuest Logo" class="logo" style="width: 80px; height: 80px; margin-top: 17px;"/>
+                <img src="whitelogo.png" alt="CyberQuest Logo" class="logo" style="width: 80px; height: 80px; margin-top: 17px;" />
             </div>
             <ul>
                 <li><a href="about.html">About</a></li>
@@ -27,33 +56,59 @@
     </header>
 
     <div class="transition transition-1 is-active">
-        <img src="cyberquestlogo2.png" alt="CyberQuest" id="loading"></div>
+        <img src="cyberquestlogo2.png" alt="CyberQuest" id="loading">
     </div>
 
-    <!-- Glassmorphic Login Panel -->
+    <!-- Glassmorphic Login Panel (now centered) -->
     <aside>
-        <!-- Logo top-left -->
-        
-
-        <!-- Centered login form -->
         <div class="login-center">
-            <h1><u>CyberQuest</u></h1>
+            <!-- STUDENT LOGIN -->
+            <div id="student-login">
+                <h1><u>Student Login</u></h1>
+                <form class="login-form">
+                    <input id="username" type="text" placeholder="Username" style="color: #93f4e0;">
+                    <input id="password" type="password" placeholder="Password" style="color: #93f4e0;">
+                    <p id="creationInfo">Account not created.</p>
+                    <button id="confirmInfo">Create Account</button>
+                </form>
+                <p class="login-toggle" onclick="toggleLogin('teacher')">Login as Teacher</p>
+            </div>
 
-            <form class="login-form">
-                <input id="username" type="text" placeholder="Username" style="color: #93f4e0;">
-                <input id="password" type="password" placeholder="Password" style="color: #93f4e0;">
-                <p id="creationInfo">Account not created.</p>
-                <button id="confirmInfo">Create Account</button>
-            </form>
+            <!-- TEACHER LOGIN (hidden by default) -->
+            <div id="teacher-login" class="hidden">
+                <h1><u>Teacher Login</u></h1>
+                <form class="login-form">
+                    <input id="teacher-username" type="text" placeholder="Teacher Username" style="color: #93f4e0;">
+                    <input id="teacher-password" type="password" placeholder="Password" style="color: #93f4e0;">
+                    <p id="teacherCreationInfo">Account not created.</p>
+                    <button id="teacherConfirmInfo">Create Account</button>
+                </form>
+                <p class="login-toggle" onclick="toggleLogin('student')">Login as Student</p>
+            </div>
         </div>
     </aside>
 
-    <!-- Footer -->
     <footer>
         <div>Team Phishify</div>
     </footer>
 
     <script src="account.js"></script>
     <script src="transition.js"></script>
+
+    <script>
+        // Toggle between Student and Teacher login
+        function toggleLogin(type) {
+            const student = document.getElementById('student-login');
+            const teacher = document.getElementById('teacher-login');
+
+            if (type === 'teacher') {
+                student.classList.add('hidden');
+                teacher.classList.remove('hidden');
+            } else {
+                teacher.classList.add('hidden');
+                student.classList.remove('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
