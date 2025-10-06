@@ -1,7 +1,9 @@
 <html>
 <head>
-    <title>Home</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="login.js" defer></script>
     <link rel="stylesheet" href="transition.css">
     <style>
         input::placeholder {
@@ -66,7 +68,7 @@
             <div id="student-login">
                 <h1><u>Student Login</u></h1>
                 <form class="login-form">
-                    <input id="username" type="text" placeholder="Username" style="color: #93f4e0;">
+                    <input id="email" type="text" placeholder="Email" style="color: #93f4e0;">
                     <input id="password" type="password" placeholder="Password" style="color: #93f4e0;">
                     <p id="creationInfo">Account not created.</p>
                     <button id="confirmInfo">Create Account</button>
@@ -78,7 +80,7 @@
             <div id="teacher-login" class="hidden">
                 <h1><u>Teacher Login</u></h1>
                 <form class="login-form">
-                    <input id="teacher-username" type="text" placeholder="Teacher Username" style="color: #93f4e0;">
+                    <input id="teacher-email" type="text" placeholder="Teacher Email" style="color: #93f4e0;">
                     <input id="teacher-password" type="password" placeholder="Password" style="color: #93f4e0;">
                     <p id="teacherCreationInfo">Account not created.</p>
                     <button id="teacherConfirmInfo">Create Account</button>
