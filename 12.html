@@ -1,9 +1,9 @@
 <html>
 
 <head>
-    <title>1.2</title>
+    <title>1.1</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="transition.css">
 
 </head>
 
@@ -14,28 +14,33 @@
             <img src="whitelogo.png" alt="CyberQuest Logo" class="logo" style="width: 80px; height: 80px; margin-top: 17px;"/>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="map.html">Map</a></li>
-                <li><a href="classroom.html">Classroom</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html" class="navlink">About</a></li>
+                <li><a href="map.html" class="navlink">Map</a></li>
+                <li><a href="classroom.html" class="navlink">Classroom</a></li>
+                <li><a href="shop.html" class="navlink">Shop</a></li>
+                <li><a href="login.html" class="navlink">Login</a></li>
             </ul>
         </nav>
     </header>
-
+    <div class="transition transition-1 is-active">
+        <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
+    </div>
     <section>
 
     </section>
-    <aside>
+    <aside style="align-items:baseline;">
 
-        <p>
-            this is 1.2
-        </p>
+        <p><h4>
+            <b><h2>Level 1.2</h2></b><br>
+            
+            1.2
+        </h4></p>
         
     </aside>
     <footer>
         <div style="margin-left: 2%;">Team Phishify</div>
     </footer>
+    <script src="transition.js"></script>
 </body>
 
 </html>
