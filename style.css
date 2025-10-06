@@ -3,7 +3,6 @@
      Might make it easier to switch color schemes more easily in the future, maybe let people buy themes?
      Want to try to maybe move all colors over to this at some point.*/
  --dark: #5c0068;
-
 }
 
 
@@ -51,13 +50,13 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 5vw;
 }
 
 nav ul li a {
     display: inline-block;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 2.5vw;
     color: #fff;
     font-weight: bold;
     padding: 0rem 0rem;
@@ -139,18 +138,6 @@ aside {
     padding-top: 3rem;
 }
 
-/* Logo top-left */
-.logo-top-left {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
-
-.logo-top-left .logo {
-    width: 128px;
-    height: 128px;
-}
-
 /* Centered login form */
 .login-center {
     display: flex;
@@ -176,9 +163,20 @@ aside {
 }
 
 #loading {
-     width: 30%;
-     margin-top: 17px;
+     width: 40%;
+     height: auto;
      position:relative;
-     margin-left: 35%;
-     margin-top: 10%;
+     margin-left: 30%;
+     margin-top: 8%;
+}
+
+
+.logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 6vw;
+    height: auto;
+    margin-top: 2.6vh;
+    max-width: 512px;
 }
