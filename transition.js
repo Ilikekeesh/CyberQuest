@@ -1,8 +1,6 @@
 window.onload = () => {
-    const transition_el = document.querySelector('.transition'); //might want to make this id
-    //IMPORTANT! This delays ALL links. This may very well cause errors in the future.
-    //Should definitely move these to ids in the future but im too lazy.
-    const anchors = document.querySelectorAll('a');
+    const transition_el = document.querySelector('.transition'); //might want to make this id? according to tutorial
+    const anchors = document.querySelectorAll('.navlink');
     let animTime = 200;
 
     setTimeout(() =>{

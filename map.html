@@ -53,11 +53,11 @@
             <img src="whitelogo.png" alt="CyberQuest Logo" class="logo" style="width: 80px; height: 80px; margin-top: 17px;"/>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="navlink">About</a></li>
                 <li><a href="#">Map</a></li>
-                <li><a href="classroom.html">Classroom</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="classroom.html" class="navlink">Classroom</a></li>
+                <li><a href="shop.html" class="navlink">Shop</a></li>
+                <li><a href="login.html" class="navlink">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -121,7 +121,7 @@
             console.log(circle.getAttribute("data-index"));
             document.getElementById("level").innerHTML=circle.getAttribute("data-index");
             const gob = document.getElementById("gobutton");
-            gob.addEventListener("click",go(circle.getAttribute("data-index")));
+            gob.addEventListener("click",function(){go(circle.getAttribute("data-index"))});
             //location.href = '1'+circle.getAttribute("data-index")+'.html';
             // To navigate to a new page:
             // window.location.href = `page${index}.html`;
