@@ -1,4 +1,8 @@
+
+
+
 var temppoint;
+let temppoint=8;
 if(document.getElementById("pointsTag")!=null){
     document.getElementById("pointsTag").textContent=temppoint;
     console.log(temppoint);
