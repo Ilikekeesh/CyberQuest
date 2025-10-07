@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>Home</title>
@@ -92,7 +93,7 @@
         }
 
         #student-login button {
-            background: linear-gradient(90deg, #ff5ccd, #fa47c4);
+            background: linear-gradient(90deg, #c32594, #9a096f);
             box-shadow: 0 0 10px rgba(255, 92, 205, 0.25);
         }
 
@@ -127,7 +128,7 @@
         }
 
         #teacher-login button {
-            background: linear-gradient(90deg, #1dd1a1, #3ce2c3);
+            background: linear-gradient(90deg, #0f8a69, #077864);
             box-shadow: 0 0 10px rgba(29, 209, 161, 0.25);
         }
 
@@ -203,8 +204,8 @@
                 <form class="login-form">
                     <input id="username" type="text" placeholder="Username">
                     <input id="password" type="password" placeholder="Password">
-                    <p id="creationInfo">Account not created.</p>
-                    <button id="confirmInfo">Create Account</button>
+                    <p id="studentCreationInfo">Do Not Have An Account?</p>
+                    <button id="confirmInfo">Sign In</button>
                 </form>
                 <p class="login-toggle" onclick="toggleLogin('teacher')">Login as Teacher</p>
             </div>
@@ -215,8 +216,8 @@
                 <form class="login-form">
                     <input id="teacher-username" type="text" placeholder="Teacher Username">
                     <input id="teacher-password" type="password" placeholder="Password">
-                    <p id="teacherCreationInfo">Account not created.</p>
-                    <button id="teacherConfirmInfo">Create Account</button>
+                    <p id="teacherCreationInfo">Do Not Have An Account?</p>
+                    <button id="teacherConfirmInfo">Sign In</button>
                 </form>
                 <p class="login-toggle" onclick="toggleLogin('student')">Login as Student</p>
             </div>
@@ -256,3 +257,5 @@
     </script>
 </body>
 </html>
+
+
