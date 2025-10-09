@@ -8,7 +8,7 @@
         .login-form button:active {
             transform: scale(0.95);
             transition: transform 0.1s ease;
-}
+        }
 
         .hidden {
             display: none;
@@ -180,7 +180,9 @@
     <header>
         <nav>
             <div class="logo-top-left">
-                <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
+                <a href="about.html" class="navlink">
+                    <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
+                </a>
             </div>
             <ul>
                 <li><a href="about.html" class="navlink">About</a></li>
@@ -204,7 +206,7 @@
                 <form class="login-form">
                     <input id="username" type="text" placeholder="Username">
                     <input id="password" type="password" placeholder="Password">
-                    <p id="studentCreationInfo">Do Not Have An Account?</p>
+                    <p><a href="signup.html" class="navlink" style="color: #ff5ccd;">Do Not Have An Account?</a></p>
                     <button id="confirmInfo">Sign In</button>
                 </form>
                 <p class="login-toggle" onclick="toggleLogin('teacher')">Login as Teacher</p>
@@ -216,7 +218,7 @@
                 <form class="login-form">
                     <input id="teacher-username" type="text" placeholder="Teacher Username">
                     <input id="teacher-password" type="password" placeholder="Password">
-                    <p id="teacherCreationInfo">Do Not Have An Account?</p>
+                    <p><a href="signup.html" class="navlink" style="color: #3ce2c3;">Do Not Have An Account?</a></p>
                     <button id="teacherConfirmInfo">Sign In</button>
                 </form>
                 <p class="login-toggle" onclick="toggleLogin('student')">Login as Student</p>
