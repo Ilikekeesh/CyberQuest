@@ -1,176 +1,164 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | CyberQuest</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="transition.css">
-    <style>
-        .login-form button:active {
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
-}
 
-        .hidden {
-            display: none;
+    <style>
+        /* === Background Gradient === */
+        body {
+            background: linear-gradient(135deg, #2b1055, #7597de);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            transition: background 1s ease;
         }
 
+        /* === General Layout === */
+        header, nav, footer, main, aside {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        header { animation-delay: 0.2s; }
+        main { animation-delay: 0.4s; }
+        aside { animation-delay: 0.6s; }
+        footer { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Hero Section === */
+        main {
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+
+        main h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        main p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #e0e0e0;
+        }
+
+        main button {
+            background: #7f5af0;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        main button:hover {
+            background: #6a47d9;
+            transform: scale(1.05);
+        }
+
+        /* === Goals Section === */
         aside {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        #card-row {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: calc(100vh - 160px);
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
         }
 
-        .login-center {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 45px 55px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .flip-card {
+            background: rgba(255, 255, 255, 0.1);
+            width: 250px;
+            height: 250px;
+            perspective: 1000px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.2);
         }
 
-        .login-center:hover {
-            transform: scale(1.01);
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
         }
 
-        .login-form {
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .login-form input {
-            width: 240px;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.25);
-            outline: none;
+        .flip-card-front {
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .flip-card-back {
+            background: rgba(127, 90, 240, 0.3);
+            transform: rotateY(180deg);
+            color: #fff;
+        }
+
+        /* === Footer === */
+        footer {
             text-align: center;
-            transition: all 0.3s ease;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
+            color: #ccc;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .login-form input:focus {
-            background: rgba(0, 0, 0, 0.3);
+        footer a {
+            color: #9f8ef0;
+            text-decoration: none;
         }
 
-        .login-form button {
-            margin-top: 10px;
-            padding: 10px 25px;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .login-toggle {
-            margin-top: 15px;
+        footer a:hover {
             text-decoration: underline;
-            cursor: pointer;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
-        /* STUDENT LOGIN - PINK */
-        #student-login h1,
-        #student-login input,
-        #student-login button,
-        #student-login p,
-        footer div {
-            color: #ff5ccd;
-            text-shadow: 0 0 5px rgba(255, 92, 205, 0.35);
-        }
-
-        #student-login input {
-            border: 1px solid rgba(255, 92, 205, 0.4);
-            box-shadow: inset 0 0 8px rgba(255, 92, 205, 0.15);
-        }
-
-        #student-login input:focus {
-            border-color: #ff5ccd;
-            box-shadow: 0 0 10px rgba(255, 92, 205, 0.3), inset 0 0 10px rgba(255, 92, 205, 0.25);
-        }
-
-        #student-login button {
-            background: linear-gradient(90deg, #ff5ccd, #fa47c4);
-            box-shadow: 0 0 10px rgba(255, 92, 205, 0.25);
-        }
-
-        #student-login button:hover {
-            background: linear-gradient(90deg, #fa47c4, #ff7ed6);
-            box-shadow: 0 0 18px rgba(255, 92, 205, 0.35);
-            transform: scale(1.04);
-        }
-
-        #student-login .login-toggle:hover {
-            color: #fa47c4;
-            text-shadow: 0 0 6px rgba(255, 92, 205, 0.3);
-        }
-
-        /* TEACHER LOGIN - TEAL */
-        #teacher-login h1,
-        #teacher-login input,
-        #teacher-login button,
-        #teacher-login p {
-            color: #1dd1a1;
-            text-shadow: 0 0 5px rgba(29, 209, 161, 0.35);
-        }
-
-        #teacher-login input {
-            border: 1px solid rgba(29, 209, 161, 0.4);
-            box-shadow: inset 0 0 8px rgba(29, 209, 161, 0.15);
-        }
-
-        #teacher-login input:focus {
-            border-color: #1dd1a1;
-            box-shadow: 0 0 10px rgba(29, 209, 161, 0.3), inset 0 0 10px rgba(29, 209, 161, 0.25);
-        }
-
-        #teacher-login button {
-            background: linear-gradient(90deg, #1dd1a1, #3ce2c3);
-            box-shadow: 0 0 10px rgba(29, 209, 161, 0.25);
-        }
-
-        #teacher-login button:hover {
-            background: linear-gradient(90deg, #3ce2c3, #6ff0d5);
-            box-shadow: 0 0 18px rgba(29, 209, 161, 0.35);
-            transform: scale(1.04);
-        }
-
-        #teacher-login .login-toggle:hover {
-            color: #3ce2c3;
-            text-shadow: 0 0 6px rgba(29, 209, 161, 0.3);
-        }
-
-        /* SLIDE + FADE ANIMATION */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
+        /* === Responsive Enhancements === */
+        @media (max-width: 768px) {
+            #card-row {
+                flex-direction: column;
+                align-items: center;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideOut {
-            from {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-        }
-
-        .login-transition-in {
-            animation: slideIn 0.5s ease forwards;
-        }
-
-        .login-transition-out {
-            animation: slideOut 0.4s ease forwards;
+            main h1 { font-size: 2.2rem; }
+            main p { font-size: 1rem; }
         }
     </style>
 </head>
@@ -179,82 +167,77 @@
     <header>
         <nav>
             <div class="logo-top-left">
-                <img src="whitelogo.png" alt="CyberQuest Logo" class="logo" style="width: 80px; height: 80px; margin-top: 17px;" />
+                <a href="home.html">
+                    <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
+                </a>
             </div>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="map.html">Map</a></li>
-                <li><a href="classroom.html">Classroom</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="about.html" class="navlink">About</a></li>
+                <li><a href="map.html" class="navlink">Map</a></li>
+                <li><a href="classroom.html" class="navlink">Classroom</a></li>
+                <li><a href="shop.html" class="navlink">Shop</a></li>
+                <li><a href="login.html" class="navlink">Login</a></li>
+                <li><a href="signup.html" class="navlink">Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- === Transition Loader === -->
     <div class="transition transition-1 is-active">
         <img src="cyberquestlogo2.png" alt="CyberQuest" id="loading">
     </div>
 
-    <aside>
-        <div class="login-center">
-            <!-- STUDENT LOGIN -->
-            <div id="student-login">
-                <h1><u>Student Login</u></h1>
-                <form class="login-form">
-                    <input id="username" type="text" placeholder="Username">
-                    <input id="password" type="password" placeholder="Password">
-                    <p id="creationInfo">Account not created.</p>
-                    <button id="confirmInfo">Create Account</button>
-                </form>
-                <p class="login-toggle" onclick="toggleLogin('teacher')">Login as Teacher</p>
+    <!-- === HERO SECTION === -->
+    <main id="home">
+        <h1>Welcome to CyberQuest</h1>
+        <p>
+            An interactive cybersecurity website that makes learning fun, rewarding, and hands-on.
+        </p>
+        <button onclick="document.getElementById('goals').scrollIntoView({behavior:'smooth'});">
+            Learn More
+        </button>
+    </main>
+
+    <!-- === GOALS SECTION === -->
+    <aside id="goals">
+        <h1>Our Goals</h1>
+        <p>
+            CyberQuest blends elegant visuals, gamified challenges, and real-world cybersecurity learning. 
+        </p>
+
+        <div id="card-row">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><h2>Gamified</h2></div>
+                    <div class="flip-card-back"><p>Earn points and rewards by completing cybersecurity challenges.</p></div>
+                </div>
             </div>
 
-            <!-- TEACHER LOGIN -->
-            <div id="teacher-login" class="hidden">
-                <h1><u>Teacher Login</u></h1>
-                <form class="login-form">
-                    <input id="teacher-username" type="text" placeholder="Teacher Username">
-                    <input id="teacher-password" type="password" placeholder="Password">
-                    <p id="teacherCreationInfo">Account not created.</p>
-                    <button id="teacherConfirmInfo">Create Account</button>
-                </form>
-                <p class="login-toggle" onclick="toggleLogin('student')">Login as Student</p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><h2>Reward System</h2></div>
+                    <div class="flip-card-back"><p>Unlock new items and badges in the CyberQuest shop.</p></div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front"><h2>Educational</h2></div>
+                    <div class="flip-card-back"><p>Learn key cybersecurity concepts interactively and at your pace.</p></div>
+                </div>
             </div>
         </div>
     </aside>
 
+    <!-- === CONTACT SECTION === -->
     <footer>
-        <div>Team Phishify</div>
+        <h1>Contact</h1>
+        <p>Got feedback or found a bug? Let us know!</p>
+        <p>Email: <a href="mailto:cyberQuest@gmail.com">cyberQuest@gmail.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/yourprofile" target="_blank">@yourprofile</a></p>
+        <p style="margin-top: 20px;">© 2025 Team Phishify</p>
     </footer>
-    <br>
-    <script src="account.js"></script>
+
     <script src="transition.js"></script>
-
-    <script>
-        function toggleLogin(type) {
-            const student = document.getElementById('student-login');
-            const teacher = document.getElementById('teacher-login');
-
-            if (type === 'teacher') {
-                student.classList.add('login-transition-out');
-                student.addEventListener('animationend', () => {
-                    student.classList.add('hidden');
-                    student.classList.remove('login-transition-out');
-                    teacher.classList.remove('hidden');
-                    teacher.classList.add('login-transition-in');
-                }, { once: true });
-            } else {
-                teacher.classList.add('login-transition-out');
-                teacher.addEventListener('animationend', () => {
-                    teacher.classList.add('hidden');
-                    teacher.classList.remove('login-transition-out');
-                    student.classList.remove('hidden');
-                    student.classList.add('login-transition-in');
-                }, { once: true });
-            }
-        }
-    </script>
 </body>
 </html>
-
-
