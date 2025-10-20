@@ -55,7 +55,7 @@
             color: #e0e0e0;
         }
 
-        main button {
+        main .learnMore {
             background: #7f5af0;
             color: white;
             border: none;
@@ -66,9 +66,9 @@
             transition: background 0.3s ease, transform 0.2s;
         }
 
-        main button:hover {
-            background: #6a47d9;
+        main .learnMore:hover {
             transform: scale(1.05);
+            background: #6a47d9;
         }
 
         /* === Goals Section === */
@@ -167,12 +167,11 @@
     <header>
         <nav>
             <div class="logo-top-left">
-                <a href="home.html">
+                <a href="#">
                     <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
                 </a>
             </div>
             <ul>
-                <li><a href="about.html" class="navlink">About</a></li>
                 <li><a href="map.html" class="navlink">Map</a></li>
                 <li><a href="classroom.html" class="navlink">Classroom</a></li>
                 <li><a href="shop.html" class="navlink">Shop</a></li>
@@ -193,9 +192,9 @@
         <p>
             An interactive cybersecurity website that makes learning fun, rewarding, and hands-on.
         </p>
-        <button onclick="document.getElementById('goals').scrollIntoView({behavior:'smooth'});">
+        <a href="about.html" class="navlink learnMore">
             Learn More
-        </button>
+        </a>
     </main>
 
     <!-- === GOALS SECTION === -->
