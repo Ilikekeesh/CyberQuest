@@ -31,7 +31,6 @@ body {
     animation: purpleGradient 19s ease infinite;
 }
 
-
 @keyframes purpleGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -88,7 +87,7 @@ html {
 button{
     border-radius: 2%;
     padding: .7rem;
-    background: linear-gradient(135deg, #691de2,#68479e,   #7597de,  #5781dc);
+    background: linear-gradient(135deg, #2b1055,#3d2761,   #7597de,  #5781dc);
     border: 2px #f9b1ec;
 }
 
