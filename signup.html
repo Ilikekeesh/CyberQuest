@@ -1,10 +1,179 @@
-<html>
 
+<html>
 <head>
-    <title>1.10</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="transition.css">
+    <style>
+        .register-form button:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
 
+        .hidden {
+            display: none;
+        }
+
+        aside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 160px);
+        }
+
+        .register-center {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 45px 55px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .register-center:hover {
+            transform: scale(1.01);
+        }
+
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .register-form input {
+            width: 240px;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.25);
+            outline: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .register-form input:focus {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .register-form button {
+            margin-top: 10px;
+            padding: 10px 25px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .register-toggle {
+            margin-top: 15px;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        /* STUDENT LOGIN - PINK */
+        #student-register h1,
+        #student-register input,
+        #student-register button,
+        #student-register p,
+        footer div {
+            color: #ff5ccd;
+            text-shadow: 0 0 5px rgba(255, 92, 205, 0.35);
+        }
+
+        #student-register input {
+            border: 1px solid rgba(255, 92, 205, 0.4);
+            box-shadow: inset 0 0 8px rgba(255, 92, 205, 0.15);
+        }
+
+        #student-register input:focus {
+            border-color: #ff5ccd;
+            box-shadow: 0 0 10px rgba(255, 92, 205, 0.3), inset 0 0 10px rgba(255, 92, 205, 0.25);
+        }
+
+        #student-register button {
+            background: linear-gradient(90deg, #c32594, #9a096f);
+            box-shadow: 0 0 10px rgba(255, 92, 205, 0.25);
+        }
+
+        #student-register button:hover {
+            background: linear-gradient(90deg, #fa47c4, #ff7ed6);
+            box-shadow: 0 0 18px rgba(255, 92, 205, 0.35);
+            transform: scale(1.04);
+        }
+
+        #student-register .register-toggle:hover {
+            color: #fa47c4;
+            text-shadow: 0 0 6px rgba(255, 92, 205, 0.3);
+        }
+
+        /* TEACHER LOGIN - TEAL */
+        #teacher-register h1,
+        #teacher-register input,
+        #teacher-register button,
+        #teacher-register p {
+            color: #1dd1a1;
+            text-shadow: 0 0 5px rgba(29, 209, 161, 0.35);
+        }
+
+        #teacher-register input {
+            border: 1px solid rgba(29, 209, 161, 0.4);
+            box-shadow: inset 0 0 8px rgba(29, 209, 161, 0.15);
+        }
+
+        #teacher-register input:focus {
+            border-color: #1dd1a1;
+            box-shadow: 0 0 10px rgba(29, 209, 161, 0.3), inset 0 0 10px rgba(29, 209, 161, 0.25);
+        }
+
+        #teacher-register button {
+            background: linear-gradient(90deg, #0f8a69, #077864);
+            box-shadow: 0 0 10px rgba(29, 209, 161, 0.25);
+        }
+
+        #teacher-register button:hover {
+            background: linear-gradient(90deg, #3ce2c3, #6ff0d5);
+            box-shadow: 0 0 18px rgba(29, 209, 161, 0.35);
+            transform: scale(1.04);
+        }
+
+        #teacher-register .register-toggle:hover {
+            color: #3ce2c3;
+            text-shadow: 0 0 6px rgba(29, 209, 161, 0.3);
+        }
+
+        /* SLIDE + FADE ANIMATION */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+        }
+
+        .register-transition-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .register-transition-out {
+            animation: slideOut 0.4s ease forwards;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,26 +189,79 @@
                 <li><a href="classroom.html" class="navlink">Classroom</a></li>
                 <li><a href="shop.html" class="navlink">Shop</a></li>
                 <li><a href="login.html" class="navlink">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="#" class="navlink">Sign Up</a></li>
             </ul>
         </nav>
     </header>
+
     <div class="transition transition-1 is-active">
-        <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
+        <img src="cyberquestlogo2.png" alt="CyberQuest" id="loading">
     </div>
-    <aside style="align-items:baseline;">
 
-        <p><h4>
-            <b><h2>Level 1.10</h2></b><br>
-            
-            1.10
-        </h4></p>
-        
+    <aside>
+        <div class="register-center">
+            <!-- STUDENT LOGIN -->
+            <div id="student-register">
+                <h1><u>Student Sign-Up</u></h1>
+                <form class="register-form">
+                    <input id="email" type="text" placeholder="Email">
+                    <input id="username" type="text" placeholder="Username">
+                    <input id="password" type="password" placeholder="Password">
+                    <input id="password" type="password" placeholder="Confirm Password">
+                    <p>Do Not Have An Account? <a href="signup.html" class="navlink" style="color: #ff5ccd;">Sign Up</a></p>
+                    <button id="confirmInfo">Create Account</button>
+                </form>
+                <p class="register-toggle" onclick="toggleRegister('teacher')">Register as Teacher</p>
+            </div>
+
+            <!-- TEACHER LOGIN -->
+            <div id="teacher-register" class="hidden">
+                <h1><u>Teacher Sign-Up</u></h1>
+                <form class="register-form">
+                    <input id="teacher-email" type="text" placeholder="Teacher Email">
+                    <input id="teacher-username" type="text" placeholder="Teacher Username">
+                    <input id="teacher-password" type="password" placeholder="Password">
+                    <input id="teacher-password" type="password" placeholder="Confirm Password">
+                    <p>Already have an account? <a href="login.html" class="navlink" style="color: #3ce2c3;">Log In</a></p>
+                    <button id="teacherConfirmInfo">Create Account</button>
+                </form>
+                <p class="register-toggle" onclick="toggleRegister('student')">Register as Student</p>
+            </div>
+        </div>
     </aside>
-    <footer>
-        <div style="margin-left: 2%;">Team Phishify</div>
-    </footer>
-    <script src="transition.js"></script>
-</body>
 
+    <footer>
+        <div>Team Phishify</div>
+    </footer>
+    <br>
+    <script src="account.js"></script>
+    <script src="transition.js"></script>
+
+    <script>
+        function toggleRegister(type) {
+            const student = document.getElementById('student-register');
+            const teacher = document.getElementById('teacher-register');
+
+            if (type === 'teacher') {
+                student.classList.add('register-transition-out');
+                student.addEventListener('animationend', () => {
+                    student.classList.add('hidden');
+                    student.classList.remove('register-transition-out');
+                    teacher.classList.remove('hidden');
+                    teacher.classList.add('register-transition-in');
+                }, { once: true });
+            } else {
+                teacher.classList.add('register-transition-out');
+                teacher.addEventListener('animationend', () => {
+                    teacher.classList.add('hidden');
+                    teacher.classList.remove('register-transition-out');
+                    student.classList.remove('hidden');
+                    student.classList.add('register-transition-in');
+                }, { once: true });
+            }
+        }
+    </script>
+</body>
 </html>
+
+
