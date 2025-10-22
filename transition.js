@@ -12,7 +12,7 @@ window.onload = () => {
 
         anchor.addEventListener('click', e => {
             e.preventDefault(); //stops link
-            let target = e.target.href; //stores target page in target
+            let target = anchor.href; //stores target page in target
 
             transition_el.classList.add('is-active');
 
