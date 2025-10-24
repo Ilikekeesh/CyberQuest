@@ -115,7 +115,9 @@
                 <li>Thunderstorms, flooding</li>
                 <li>Fires, earthquakes</li>
             </ul>
-        </h4></p>
+        </h4>
+        <button type="button" id="completebutton">Complete Lesson</button>
+    </p>
         
     </aside>
     <footer>
@@ -126,7 +128,10 @@
 
     <script>
         let points = parseInt(localStorage.getItem('points'));
-        localStorage.setItem('points', points+2);
+        const complete = document.getElementById("completebutton");
+        complete.addEventListener('click',()=>{
+            localStorage.setItem('points', points+2);
+        })
     </script>
 </body>
 

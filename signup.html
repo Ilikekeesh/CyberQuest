@@ -100,7 +100,7 @@
         #student-register button:hover {
             background: linear-gradient(90deg, #fa47c4, #ff7ed6);
             box-shadow: 0 0 18px rgba(255, 92, 205, 0.35);
-            transform: scale(1.04);
+            transform: scale(1.06);
         }
 
         #student-register .register-toggle:hover {
@@ -135,7 +135,7 @@
         #teacher-register button:hover {
             background: linear-gradient(90deg, #3ce2c3, #6ff0d5);
             box-shadow: 0 0 18px rgba(29, 209, 161, 0.35);
-            transform: scale(4.04);
+            transform: scale(1.06);
         }
 
         #teacher-register .register-toggle:hover {
@@ -209,7 +209,7 @@
                     <input id="password" type="password" placeholder="Password">
                     <input id="password" type="password" placeholder="Confirm Password">
                     <p>Already have an Account? <a href="login.html" class="navlink" style="color: #ff5ccd;">Log In</a></p>
-                    <button id="confirmInfo">Create Account</button>
+                    <button type="button" id="create-account">Create Account</button>
                 </form>
                 <p class="register-toggle" onclick="toggleRegister('teacher')">Register as Teacher</p>
             </div>
@@ -223,7 +223,7 @@
                     <input id="teacher-password" type="password" placeholder="Password">
                     <input id="teacher-password" type="password" placeholder="Confirm Password">
                     <p>Already have an account? <a href="login.html" class="navlink" style="color: #3ce2c3;">Log In</a></p>
-                    <button id="teacherConfirmInfo">Create Account</button>
+                    <button type="button" id="teacher-create-account">Create Account</button>
                 </form>
                 <p class="register-toggle" onclick="toggleRegister('student')">Register as Student</p>
             </div>
@@ -238,10 +238,10 @@
     <script src="transition.js"></script>
 
     <script>
+        const createaccount = document.getElementById('create-account');
         function toggleRegister(type) {
             const student = document.getElementById('student-register');
             const teacher = document.getElementById('teacher-register');
-
             if (type === 'teacher') {
                 student.classList.add('register-transition-out');
                 student.addEventListener('animationend', () => {
@@ -260,6 +260,9 @@
                 }, { once: true });
             }
         }
+        createaccount.addEventListener('click', ()=>{
+            localStorage.setItem('points', 0);
+        })
     </script>
 </body>
 </html>

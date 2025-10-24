@@ -87,7 +87,8 @@ html {
 button{
     border-radius: 2%;
     padding: .7rem;
-    background: linear-gradient(135deg, #2b1055,#3d2761,   #7597de,  #5781dc);
+    background: #e1adff;
+    border-radius: 6px;
     border: 2px #f9b1ec;
 }
 
