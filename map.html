@@ -135,8 +135,11 @@
 
     // No need for a complex resize handler, as SVG handles resizing natively!
     function go(ind){
-        console.log(ind);
-        location.href='1'+ind+'.html';
+        const transition_el = document.querySelector('.transition');
+        transition_el.classList.add('is-active');
+        setTimeout(() => {
+            location.href='1'+ind+'.html';
+        }, 200);
     }
 </script>
 </aside>

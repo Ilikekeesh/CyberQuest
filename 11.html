@@ -15,7 +15,6 @@
                 </a>
             </div>
             <ul>
-                <li><a href="about.html" class="navlink">About</a></li>
                 <li><a href="map.html" class="navlink">Map</a></li>
                 <li><a href="classroom.html" class="navlink">Classroom</a></li>
                 <li><a href="shop.html" class="navlink">Shop</a></li>
@@ -120,6 +119,10 @@
     </p>
         
     </aside>
+
+    <aside style="text-align: center; margin-top: 2rem;">
+        <button id="finish-level">✅ Finish Level</button>
+    </aside>
     <footer>
         <div style="margin-left: 2%;">Team Phishify</div>
     </footer>
@@ -127,11 +130,37 @@
     <script src="transition.js"></script>
 
     <script>
-        let points = parseInt(localStorage.getItem('points'));
-        const complete = document.getElementById("completebutton");
-        complete.addEventListener('click',()=>{
-            localStorage.setItem('points', points+2);
-        })
+        document.addEventListener("DOMContentLoaded", () => {
+          const startTime = Date.now(); // record when the level starts
+          const finishBtn = document.getElementById('finish-level');
+          const transition_el = document.querySelector('.transition');
+      
+          // ensure points exist
+          if (!localStorage.getItem('points')) {
+            localStorage.setItem('points', 0);
+          }
+      
+          // handle Finish Level button click
+          finishBtn.addEventListener('click', () => {
+            // Add points for completing the level
+            let points = parseInt(localStorage.getItem('points')) || 0;
+            localStorage.setItem('points', points + 2);
+      
+            // Record completion stats
+            localStorage.setItem('levelCompleted', '1.1');
+            localStorage.setItem('score', 2750); 
+            localStorage.setItem('xp', 250);
+      
+            const leaveTime = Date.now();
+            localStorage.setItem('time', (leaveTime - startTime)/1000);
+      
+            // Transition to classroom with animation
+            transition_el.classList.add('is-active');
+            setTimeout(() => {
+              window.location.href = "classroom.html";
+            }, 200);
+          });
+        });
     </script>
 </body>
 
