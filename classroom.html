@@ -41,6 +41,17 @@
         </div>
     </div>
 
+    <aside>
+
+        <p id="studentroom" style="display: none;">
+            this is student room
+        </p>
+        
+        <p id="teacherroom" style="display: none;">
+            this is teacher room
+        </p>
+
+    </aside>
     <footer>
         <div style="margin-left: 2%;">Team Phishify</div>
     </footer>
@@ -76,7 +87,13 @@
             setTimeout(() => popup.remove(), 600);
           });
         });
-      </script>
+        let isStudent = parseInt(localStorage.getItem('student'));
+        if(isStudent == true){
+            document.getElementById('studentroom').style.display = 'block';
+        }else{
+            document.getElementById('teacherroom').style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
