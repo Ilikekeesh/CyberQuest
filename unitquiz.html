@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberQuest | Cybersecurity Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="transition.css">
+  <style>
+
+
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+
+    .question {
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin: 10px auto;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Cybersecurity Quiz</h2>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What does “phishing” refer to?</p>
+        <label><input type="radio" name="q1" value="0"> A software update process</label>
+        <label><input type="radio" name="q1" value="1"> A scam to trick people into revealing personal information</label>
+        <label><input type="radio" name="q1" value="0"> Encrypting sensitive data</label>
+      </div>
+
+      <div class="question">
+        <p>2. What is the primary purpose of a firewall?</p>
+        <label><input type="radio" name="q2" value="1"> To block unauthorized access to or from a network</label>
+        <label><input type="radio" name="q2" value="0"> To physically secure computer hardware</label>
+        <label><input type="radio" name="q2" value="0"> To store passwords safely</label>
+      </div>
+
+      <div class="question">
+        <p>3. Which of the following is a strong password?</p>
+        <label><input type="radio" name="q3" value="0"> password123</label>
+        <label><input type="radio" name="q3" value="0"> mydogname</label>
+        <label><input type="radio" name="q3" value="1"> T!m3#Cyber2025</label>
+      </div>
+
+      <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const totalQuestions = 3;
+      let score = 0;
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer && answer.value === "1") score++;
+      }
+
+      localStorage.setItem("quizScore", score);
+      localStorage.setItem("totalQuestions", totalQuestions);
+      window.location.href = "results.html";
+    }
+  </script>
+</body>
+</html>
