@@ -385,3 +385,23 @@ aside {
     background: linear-gradient(135deg, #b53df5, #6f00c9);
     transform: scale(1.08);
   }
+
+
+  .shop-items {
+    position: absolute;
+    display: flex;
+    gap: 5vw;
+  }
+
+  .shop-item {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .shop-item-desc {
+    font-size: 2vw;
+  }
+  .shop-item-image {
+    width: 4vw;
+    height: 3vw;
+  }

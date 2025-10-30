@@ -256,6 +256,23 @@
                 }, { once: true });
             }
         }
+
+        const studentLoginButton = document.getElementById("confirmInfo");
+        const teacherLoginButton = document.getElementById("teacherConfirmInfo");
+
+            studentLoginButton.addEventListener('click', ()=>{
+                localStorage.setItem('points', 0);
+                localStorage.setItem('student',true);
+                console.log("student: " + localStorage.getItem('student'));
+            })
+            teacherLoginButton.addEventListener('click', ()=>{
+                localStorage.setItem('points',0);
+                localStorage.setItem('student',false);
+                console.log("student: " + localStorage.getItem('student'));
+            })
+
+        studentLoginButton.addEventListener();
+        
     </script>
 </body>
 </html>
