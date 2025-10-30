@@ -7,65 +7,128 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="transition.css">
   <style>
+    /* Keep consistent with your site’s aesthetic */
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: left;
+    }
 
-
-    .quiz-container {
-      width: 90%;
-      max-width: 600px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      padding: 40px;
+      width: 80%;
+      max-width: 700px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     }
 
-
-    .question {
-      margin: 25px 0;
-      text-align: center;
+    .quiz-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
-    label {
+    .question p {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .question label {
       display: block;
-      margin: 10px auto;
-      width: fit-content;
+      margin: 8px 0;
+      font-weight: 400;
       cursor: pointer;
     }
 
-   
+    .btn {
+      background-color: #38bdf8;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
 
+    .btn:hover {
+      background-color: #0ea5e9;
+    }
+
+    .subtitle {
+      margin-bottom: 20px;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
+
 <body>
-  <div class="quiz-container">
-    <h2>Cybersecurity Quiz</h2>
-
-    <form id="quizForm">
-      <div class="question">
-        <p>1. What does “phishing” refer to?</p>
-        <label><input type="radio" name="q1" value="0"> A software update process</label>
-        <label><input type="radio" name="q1" value="1"> A scam to trick people into revealing personal information</label>
-        <label><input type="radio" name="q1" value="0"> Encrypting sensitive data</label>
+  <header>
+    <nav>
+      <div class="logo-top-left">
+        <a href="home.html">
+          <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
+        </a>
       </div>
+      <ul>
+        <li><a href="map.html" class="navlink">Map</a></li>
+        <li><a href="classroom.html" class="navlink">Classroom</a></li>
+        <li><a href="shop.html" class="navlink">Shop</a></li>
+        <li><a href="login.html" class="navlink">Login</a></li>
+        <li><a href="signup.html" class="navlink">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <div class="question">
-        <p>2. What is the primary purpose of a firewall?</p>
-        <label><input type="radio" name="q2" value="1"> To block unauthorized access to or from a network</label>
-        <label><input type="radio" name="q2" value="0"> To physically secure computer hardware</label>
-        <label><input type="radio" name="q2" value="0"> To store passwords safely</label>
-      </div>
-
-      <div class="question">
-        <p>3. Which of the following is a strong password?</p>
-        <label><input type="radio" name="q3" value="0"> password123</label>
-        <label><input type="radio" name="q3" value="0"> mydogname</label>
-        <label><input type="radio" name="q3" value="1"> T!m3#Cyber2025</label>
-      </div>
-
-      <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
-    </form>
+  <!-- Transition animation -->
+  <div class="transition transition-1 is-active">
+    <img src="cyberquestlogo2.png" alt="CyberQuest Loading" id="loading">
   </div>
 
+  <main>
+    <section class="glass-panel">
+      <h1>Cybersecurity Quiz</h1>
+      <p class="subtitle">Test your knowledge and see how much you’ve learned! Each question has one correct answer — good luck!</p>
+
+      <form id="quizForm" class="quiz-form">
+        <div class="question">
+          <p><b>1.</b> What does “phishing” refer to?</p>
+          <label><input type="radio" name="q1" value="0"> A software update process</label>
+          <label><input type="radio" name="q1" value="1"> A scam to trick people into revealing personal information</label>
+          <label><input type="radio" name="q1" value="0"> Encrypting sensitive data</label>
+        </div>
+
+        <div class="question">
+          <p><b>2.</b> What is the primary purpose of a firewall?</p>
+          <label><input type="radio" name="q2" value="1"> To block unauthorized access to or from a network</label>
+          <label><input type="radio" name="q2" value="0"> To physically secure computer hardware</label>
+          <label><input type="radio" name="q2" value="0"> To store passwords safely</label>
+        </div>
+
+        <div class="question">
+          <p><b>3.</b> Which of the following is a strong password?</p>
+          <label><input type="radio" name="q3" value="0"> password123</label>
+          <label><input type="radio" name="q3" value="0"> mydogname</label>
+          <label><input type="radio" name="q3" value="1"> T!m3#Cyber2025</label>
+        </div>
+
+        <button type="button" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>Team Phishify</div>
+  </footer>
+
+  <script src="transition.js"></script>
   <script>
     function submitQuiz() {
       const totalQuestions = 3;
