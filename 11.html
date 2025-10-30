@@ -1,167 +1,158 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>1.1</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="transition.css">
-</head>
-
-<body>
-    <header>
-        <nav>
-            <div class="logo-top-left">
-                <a href="home.html" class="navlink">
-                    <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
-                </a>
-            </div>
-            <ul>
-                <li><a href="map.html" class="navlink">Map</a></li>
-                <li><a href="classroom.html" class="navlink">Classroom</a></li>
-                <li><a href="shop.html" class="navlink">Shop</a></li>
-                <li><a href="login.html" class="navlink">Login</a></li>
-                <li><a href="signup.html" class="navlink">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="transition transition-1 is-active">
-        <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
-    </div>
-    <aside>
-
-        <p>
-            <b><h2>Level 1.1: Common Threats</h2></b><br>
-            <h3>Goals:
-            <ul>
-                <li>Learning about common issues and cybersecurity threats</li>
-                <li>Building a mental dictionary of important security terms</li>
-            </ul>
-            </h3>
-        </aside>
-        <aside>
-            In the world of cybersecurity, we deal with a lot of different types of threat actors. In this level, we will learn about the most common types and how they act.
-        </aside>
-        <aside style="align-items:baseline;">
-            <div id="card-row">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card" style="float: right;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card" style="float: right;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <h4>
-            Software Attacks
-            <ul>
-                <li>Denial of service (or distributed denial of service)</li>
-                <li>Computer worms, viruses, and other malware</li>
-            </ul>
-            Software Errors
-            <ul>
-                <li>Software bugs and human error</li>
-                <li>Applications going offline</li>
-                <li>Cross-site scripts or illegal file server sharing</li>
-            </ul>
-            Sabotage
-            <ul>
-                <li>Authorized users penetrating and compromising data</li>
-                <li>Defacement of a organization's website</li>
-            </ul>
-            <b>Human Error</b>
-            <ul>
-                <li>Inadvertant data entry error</li>
-                <li>Firewall misconfigurations</li>
-            </ul>
-            <b>Theft</b>
-            <ul>
-                <li>Laptops or other data stolen from unlocked rooms</li>
-            </ul>
-            <b>Hardware Failure</b>
-            <ul>
-                <li>Hard drive crashes</li>
-            </ul>
-            Utility Interruption
-            <ul>
-                <li>Electrical power outage</li>
-                <li>Water damage</li>
-            </ul>
-            Natural Disasters
-            <ul>
-                <li>Hurricanes, tornadoes</li>
-                <li>Thunderstorms, flooding</li>
-                <li>Fires, earthquakes</li>
-            </ul>
-        </h4>
-        <button type="button" id="completebutton" class="buttonSquish">Complete Lesson</button>
-    </p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Lesson: CIA Triad</title>
+  <style>
+    body {
         
-    </aside>
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      background: radial-gradient(circle at center, #0f172a, #020617);
+      color: white;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+    }
 
-    <aside style="text-align: center; margin-top: 2rem;">
-        <button id="finish-level">✅ Finish Level</button>
-    </aside>
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p, ul {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .example {
+      background-color: #1e293b;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    
+
+    .collapsible {
+      background-color: #1e293b;
+      color: #38bdf8;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #334155;
+    }
+
+    .content {
+      padding: 0 1rem;
+      display: none;
+      overflow: hidden;
+      background-color: #0f172a;
+      border-left: 3px solid #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h1>Cybersecurity Lesson: The CIA Triad</h1>
+
+    <h2>Introduction</h2>
+    <p>In today’s digital world, protecting information is more important than ever. From personal accounts to corporate data, cybersecurity helps safeguard sensitive information from unauthorized access, theft, or damage. Understanding cybersecurity is essential for anyone using technology.</p>
+
+    <h2>Why Cybersecurity Matters</h2>
+    <ul>
+      <li><strong>Protects Personal Data:</strong> Keeps passwords, banking information, and files safe.</li>
+      <li><strong>Prevents Financial Loss:</strong> Cyber attacks can cost individuals and organizations millions.</li>
+      <li><strong>Maintains Trust:</strong> Companies must protect customer data to maintain credibility.</li>
+      <li><strong>Supports National Security:</strong> Securing critical infrastructure prevents threats to safety.</li>
+    </ul>
+
+    <h2>The CIA Triad</h2>
+    <p>The CIA Triad is a foundational model in cybersecurity, representing <strong>Confidentiality, Integrity, and Availability</strong>. Click each section to learn more:</p>
+
+    <button class="collapsible">Confidentiality</button>
+    <div class="content">
+      <p>Ensuring information is accessible only to authorized users. Example: Encrypting emails or using strong passwords.</p>
+    </div>
+
+    <button class="collapsible">Integrity</button>
+    <div class="content">
+      <p>Ensuring information is accurate and unaltered. Example: Using checksums or version control to prevent unauthorized changes.</p>
+    </div>
+
+    <button class="collapsible">Availability</button>
+    <div class="content">
+      <p>Ensuring information and systems are accessible when needed. Example: Using backups, redundant servers, and disaster recovery plans.</p>
+    </div>
+
+    <h2>Real-World Example: Online Banking</h2>
+    <button class="collapsible">Click to expand</button>
+    <div class="content example">
+      <ul>
+        <li><strong>Confidentiality:</strong> Only the account holder can see their balance.</li>
+        <li><strong>Integrity:</strong> Transactions are accurate and unchanged.</li>
+        <li><strong>Availability:</strong> The website is accessible whenever customers need it.</li>
+      </ul>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Cybersecurity is essential for protecting information, maintaining trust, and ensuring systems work as intended. By understanding and applying the CIA Triad, individuals and organizations can build safer digital environments.</p>
+
     <footer>
-        <div style="margin-left: 2%;">Team Phishify</div>
+      &copy; 2025 Cybersecurity Lesson
     </footer>
-    <br>
-    <script src="transition.js"></script>
+  </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const startTime = Date.now(); // record when the level starts
-          const finishBtn = document.getElementById('finish-level');
-          const transition_el = document.querySelector('.transition');
-      
-          // ensure points exist
-          if (!localStorage.getItem('points')) {
-            localStorage.setItem('points', 0);
-          }
-      
-          // handle Finish Level button click
-          finishBtn.addEventListener('click', () => {
-            // Add points for completing the level
-            let points = parseInt(localStorage.getItem('points')) || 0;
-            localStorage.setItem('points', points + 2);
-      
-            // Record completion stats
-            localStorage.setItem('levelCompleted', '1.1');
-            localStorage.setItem('score', 2750); 
-            localStorage.setItem('xp', 250);
-      
-            const leaveTime = Date.now();
-            localStorage.setItem('time', (leaveTime - startTime)/1000);
-      
-            // Transition to classroom with animation
-            transition_el.classList.add('is-active');
-            setTimeout(() => {
-              window.location.href = "classroom.html";
-            }, 200);
-          });
-        });
-    </script>
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+  </script>
 </body>
-
 </html>
