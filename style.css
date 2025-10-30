@@ -92,6 +92,16 @@ button{
     border: 2px #f9b1ec;
 }
 
+.buttonSquish{
+    transition: transform 80ms ease-in, filter .2s ease;
+    cursor: pointer;
+}
+
+.buttonSquish:active{
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Glassmorphism Panels with animated pink-green gradient */
 main, aside, footer {
     background: linear-gradient(135deg,
@@ -246,3 +256,140 @@ aside {
             /* gap-8 */
             gap: 2rem; 
         }
+
+        /*chatgpt popup screen for classroom*/
+
+        /* === Popup Overlay === */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 0, 20, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  
+  .popup.visible {
+    opacity: 1;
+    animation: floatUp 0.8s ease forwards;
+  }
+  
+  .popup.fade-out {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  /* === Popup Box === */
+  .popup-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(144, 238, 144, 0.15));
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #fff;
+    transform: translateY(40px);
+    animation: floatUp 0.8s ease forwards;
+  }
+  
+  .popup-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #ffb3ec;
+  }
+  
+  .popup-content p {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+  }
+  
+  .popup-content button {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s;
+  }
+  
+  .popup-content button:hover {
+    background: linear-gradient(135deg, #d07cff, #9a36db);
+    transform: scale(1.05);
+  }
+
+  #score-popup {
+    animation: textFloatUp 1s ease forwards;
+  }
+  #xp-popup {
+    animation: textFloatUp 1.5s ease forwards;
+  }
+  #time-popup {
+    animation: textFloatUp 1.8s ease forwards;
+  }
+  
+  /* Float Up Animation */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(60px);
+      opacity: 0;
+    }
+    33% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes textFloatUp {
+    0% {
+        transform: translateY(100);
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    33% {
+        transform: translateY(100);
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+
+  #finish-level {
+    background: linear-gradient(135deg, #2b1055, #7597de, #5781dc);
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  #finish-level:hover {
+    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    transform: scale(1.08);
+  }

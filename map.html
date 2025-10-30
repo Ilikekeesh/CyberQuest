@@ -80,33 +80,29 @@
     <div id="overlay-div">
         <h2>Level <div id="level" style="display: inline-block;"></div></h2>
         <p>Lorem ipsum dolor sit amet.</p>
-        <button style="float: right;" onclick="document.getElementById('overlay-div').style.display = 'none';">Close</button>
-        <button id="gobutton">Go!</button>
+        <button style="float: right;" class="buttonSquish" onclick="document.getElementById('overlay-div').style.display = 'none';">Close</button>
+        <button id="gobutton" class="buttonSquish" >Go!</button>
     </div>
 </div>
 
 <script>
     const svg = document.getElementById("mySVG");
 
-    // Original points based on a 300x150 'viewBox'
     const points = [
         [200, 70], [205, 132], [99, 126], [100, 70], [185, 66],
         [180, 50], [170, 30], [150, 20], [128, 35], [115, 55]
     ];
 
-    // 1. Convert points array to a 'path' string for the polyline
     // M = MoveTo (start point), L = LineTo (subsequent points)
     const polylinePath = points.map((p, i) => {
         return (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1];
     }).join(' ');
 
-    // 2. Create the line element (the map boundary)
     const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
     line.setAttribute("d", polylinePath);
     line.setAttribute("class", "map-line");
     svg.appendChild(line);
 
-    // 3. Create the circles (the map points)
     points.forEach((p, index) => {
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", p[0]);
@@ -116,12 +112,8 @@
         circle.setAttribute("class", "map-point");
         // Add click behavior to the points
         circle.addEventListener('click', function() {
-            // Find the point on the screen (for positioning an *external* div)
-            // For a simple demo, just show the pre-positioned div
             const overlayDiv = document.getElementById('overlay-div');
             overlayDiv.style.display = 'block';
-            console.log(`Clicked point at original coords: (${p[0]}, ${p[1]})`);
-            console.log(circle.getAttribute("data-index"));
             document.getElementById("level").innerHTML=circle.getAttribute("data-index");
             const gob = document.getElementById("gobutton");
             gob.addEventListener("click",function(){go(circle.getAttribute("data-index"))});
@@ -129,14 +121,12 @@
         svg.appendChild(circle);
     });
 
-    // NOTE: The SVG's 'viewBox="0 0 300 150"' and 'preserveAspectRatio' 
-    // handle the proportional scaling automatically without needing JavaScript math.
-    // The CSS on #map-container handles the 90% viewport height.
-
-    // No need for a complex resize handler, as SVG handles resizing natively!
     function go(ind){
-        console.log(ind);
-        location.href='1'+ind+'.html';
+        const transition_el = document.querySelector('.transition');
+        transition_el.classList.add('is-active');
+        setTimeout(() => {
+            location.href='1'+ind+'.html';
+        }, 200);
     }
 </script>
 </aside>
