@@ -6,6 +6,7 @@
   <title>Cybersecurity Lesson: CIA Triad</title>
   <style>
     body {
+        
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -50,6 +51,7 @@
       border-radius: 10px;
       margin-bottom: 2rem;
     }
+    
 
     .collapsible {
       background-color: #1e293b;
@@ -87,7 +89,7 @@
   </style>
 </head>
 <body>
-<<<<<<< HEAD
+    
   <div class="container">
     <h1>Cybersecurity Lesson: The CIA Triad</h1>
 
@@ -108,29 +110,8 @@
     <button class="collapsible">Confidentiality</button>
     <div class="content">
       <p>Ensuring information is accessible only to authorized users. Example: Encrypting emails or using strong passwords.</p>
-=======
-    <header>
-        <nav>
-            <div class="logo-top-left">
-                <a href="home.html" class="navlink">
-                    <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
-                </a>
-            </div>
-            <ul>
-                <li><a href="map.html" class="navlink">Map</a></li>
-                <li><a href="classroom.html" class="navlink">Classroom</a></li>
-                <li><a href="shop.html" class="navlink">Shop</a></li>
-                <li><a href="login.html" class="navlink">Login</a></li>
-                <li><a href="signup.html" class="navlink">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="transition transition-1 is-active">
-        <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
->>>>>>> 9ebf3db565dc22657404e6706b115308a485627e
     </div>
 
-<<<<<<< HEAD
     <button class="collapsible">Integrity</button>
     <div class="content">
       <p>Ensuring information is accurate and unaltered. Example: Using checksums or version control to prevent unauthorized changes.</p>
@@ -154,109 +135,11 @@
     <h2>Conclusion</h2>
     <p>Cybersecurity is essential for protecting information, maintaining trust, and ensuring systems work as intended. By understanding and applying the CIA Triad, individuals and organizations can build safer digital environments.</p>
 
-=======
-        <p>
-            <b><h2>Level 1.1: Common Threats</h2></b><br>
-            <h3>Goals:
-            <ul>
-                <li>Learning about common issues and cybersecurity threats</li>
-                <li>Building a mental dictionary of important security terms</li>
-            </ul>
-            </h3>
-        </aside>
-        <aside>
-            In the world of cybersecurity, we deal with a lot of different types of threat actors. In this level, we will learn about the most common types and how they act.
-        </aside>
-        <aside style="align-items:baseline;">
-            <div id="card-row">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card" style="float: right;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="flip-card" style="float: right;">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="Drawing-1.sketchpad.png" style="width: 300px; height: 300px;">
-                    </div>
-                    <div class="flip-card-back">
-                        <h2>wow flipcard</h2>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <h4>
-            Software Attacks
-            <ul>
-                <li>Denial of service (or distributed denial of service)</li>
-                <li>Computer worms, viruses, and other malware</li>
-            </ul>
-            Software Errors
-            <ul>
-                <li>Software bugs and human error</li>
-                <li>Applications going offline</li>
-                <li>Cross-site scripts or illegal file server sharing</li>
-            </ul>
-            Sabotage
-            <ul>
-                <li>Authorized users penetrating and compromising data</li>
-                <li>Defacement of a organization's website</li>
-            </ul>
-            <b>Human Error</b>
-            <ul>
-                <li>Inadvertant data entry error</li>
-                <li>Firewall misconfigurations</li>
-            </ul>
-            <b>Theft</b>
-            <ul>
-                <li>Laptops or other data stolen from unlocked rooms</li>
-            </ul>
-            <b>Hardware Failure</b>
-            <ul>
-                <li>Hard drive crashes</li>
-            </ul>
-            Utility Interruption
-            <ul>
-                <li>Electrical power outage</li>
-                <li>Water damage</li>
-            </ul>
-            Natural Disasters
-            <ul>
-                <li>Hurricanes, tornadoes</li>
-                <li>Thunderstorms, flooding</li>
-                <li>Fires, earthquakes</li>
-            </ul>
-        </h4>
-        <button type="button" id="completebutton" class="buttonSquish">Complete Lesson</button>
-    </p>
-        
-    </aside>
-
-    <aside style="text-align: center; margin-top: 2rem;">
-        <button id="finish-level">✅ Finish Level</button>
-    </aside>
->>>>>>> 9ebf3db565dc22657404e6706b115308a485627e
     <footer>
       &copy; 2025 Cybersecurity Lesson
     </footer>
   </div>
 
-<<<<<<< HEAD
   <script>
     const collapsibles = document.querySelectorAll(".collapsible");
     collapsibles.forEach(btn => {
@@ -271,40 +154,5 @@
       });
     });
   </script>
-=======
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const startTime = Date.now(); // record when the level starts
-          const finishBtn = document.getElementById('finish-level');
-          const transition_el = document.querySelector('.transition');
-      
-          // ensure points exist
-          if (!localStorage.getItem('points')) {
-            localStorage.setItem('points', 0);
-          }
-      
-          // handle Finish Level button click
-          finishBtn.addEventListener('click', () => {
-            // Add points for completing the level
-            let points = parseInt(localStorage.getItem('points')) || 0;
-            localStorage.setItem('points', points + 2);
-      
-            // Record completion stats
-            localStorage.setItem('levelCompleted', '1.1');
-            localStorage.setItem('score', 2750); 
-            localStorage.setItem('xp', 250);
-      
-            const leaveTime = Date.now();
-            localStorage.setItem('time', (leaveTime - startTime)/1000);
-      
-            // Transition to classroom with animation
-            transition_el.classList.add('is-active');
-            setTimeout(() => {
-              window.location.href = "classroom.html";
-            }, 200);
-          });
-        });
-    </script>
->>>>>>> 9ebf3db565dc22657404e6706b115308a485627e
 </body>
 </html>
