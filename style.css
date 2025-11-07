@@ -2,7 +2,22 @@
     Call them using a format like "var(--dark)".
      Might make it easier to switch color schemes more easily in the future, maybe let people buy themes?
      Want to try to maybe move all colors over to this at some point.*/
- --dark: #5c0068;
+--pink0: #ffe6ff;
+--pink1: #ffb3ec;
+--purple0: #d07cff;
+--purple1: #b53df5;
+--purple2: #950fd3;
+--purple3: #600c85;
+--lightblue0: #c8c8ff;
+--lightblue1: #9b9bf4;
+--lightblue2: #747aee;
+--lightblue3: #525bc4;
+--blue0: #3f3898;
+--blue1: #2e2a87;
+--blue2: #19306a;
+--blue3: #0e124a;
+--white: #fff;
+--black: #000;
 }
 
 
@@ -14,7 +29,7 @@
 }
 
 html {
-    background-color: #600c85;
+    background-color: var(--purple3);
 }
 
 /* Fonts & Colors */
@@ -26,7 +41,7 @@ body {
     padding-top: 30px;
 
     /* Animated Purple-Blue Background */
-    background: linear-gradient(135deg, #950fd3, #600c85, #2e2a87, #1e3c72);
+    background: linear-gradient(135deg, var(--purple2), var(--purple3), var(--blue1), var(--blue2));
     background-size: 300% 300%;
     animation: purpleGradient 19s ease infinite;
 }
@@ -69,13 +84,13 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    background: #ffb3ec;
+    background: var(--pink);
     color: #000;
     font-size: 2.2rem;
 }
 
 nav ul li a:hover {
-    color: #e1adff;
+    color: var(--purple0);
     transform: scale(1.2);
 }
 
@@ -87,9 +102,9 @@ html {
 button{
     border-radius: 2%;
     padding: .7rem;
-    background: #e1adff;
+    background: var(--purple0);
     border-radius: 6px;
-    border: 2px #f9b1ec;
+    border: 2px var(--purple1);
 }
 
 .buttonSquish{
@@ -133,7 +148,7 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #ffe6ff;
+    color: var(--pink0);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -230,18 +245,18 @@ aside {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white; /* Text color white */
+  color: var(--white); /* Text color white */
   border-radius: 16px;
   padding: 1rem;
   font-size: 1.2rem;
 }
 
 .flip-card-front {
-  background: linear-gradient(135deg, #ffb6c1, #ffccdd); /* light pink gradient */
+  background: linear-gradient(135deg, var(--purple0), var(--pink1)); /* light pink gradient */
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #90ee90, #ccffcc); /* light green gradient */
+  background: linear-gradient(135deg, var(--purple1), var(--purple0)); /* light green gradient */
   transform: rotateY(180deg);
 }
 
@@ -299,7 +314,7 @@ aside {
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    color: #fff;
+    color: var(--white);
     transform: translateY(40px);
     animation: floatUp 0.8s ease forwards;
   }
@@ -307,7 +322,7 @@ aside {
   .popup-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px #ffb3ec;
+    text-shadow: 0 0 10px var(--pink1);
   }
   
   .popup-content p {
@@ -317,18 +332,18 @@ aside {
   
   .popup-content button {
     margin-top: 1.5rem;
-    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    background: linear-gradient(135deg, var(--purple1), var(--purple3));
     border: none;
     padding: 0.8rem 2rem;
     border-radius: 10px;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.3s;
   }
   
   .popup-content button:hover {
-    background: linear-gradient(135deg, #d07cff, #9a36db);
+    background: linear-gradient(135deg, var(--pink1), var(--purple1));
     transform: scale(1.05);
   }
 
@@ -377,7 +392,7 @@ aside {
   }
 
   #finish-level {
-    background: linear-gradient(135deg, #2b1055, #7597de, #5781dc);
+    background: linear-gradient(135deg, #2b1055, var(--lightblue2), var(--lightblue3));
     color: white;
     font-weight: bold;
     font-size: 1.3rem;
@@ -390,7 +405,7 @@ aside {
   }
   
   #finish-level:hover {
-    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    background: linear-gradient(135deg, var(--purple1), var(--purple3));
     transform: scale(1.08);
   }
 
@@ -400,12 +415,10 @@ aside {
     display: flex;
     gap: 5vw;
   }
-
   .shop-item {
     width: 30vw;
     height: 30vw;
   }
-
   .shop-item-desc {
     font-size: 2vw;
   }
@@ -413,6 +426,8 @@ aside {
     width: 4vw;
     height: 3vw;
   }
+
+
   /* === HALLOWEEN THEME === */
 .halloween-theme {
     background: radial-gradient(circle at center, #0a0a0a, #1b0000);
