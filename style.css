@@ -413,3 +413,42 @@ aside {
     width: 4vw;
     height: 3vw;
   }
+  /* === HALLOWEEN THEME === */
+.halloween-theme {
+    background: radial-gradient(circle at center, #0a0a0a, #1b0000);
+    color: #ff8c00; /* orange text */
+}
+
+.halloween-theme header,
+.halloween-theme nav {
+    background: rgba(30, 0, 30, 0.7);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 15px #ff8c00;
+}
+
+.halloween-theme a.navlink {
+    color: #ff8c00;
+}
+
+.halloween-theme .btn {
+    background: #ff4500; /* bright orange button */
+    color: black;
+    border: 2px solid #ff8c00;
+    text-shadow: 0 0 10px #ff8c00;
+    font-weight: bold;
+}
+
+.halloween-theme .btn:hover {
+    background: #ff8c00;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff8c00;
+}
+
+.halloween-theme footer {
+    background: rgba(30, 0, 30, 0.7);
+    color: #ff8c00;
+}
+
+.halloween-theme main {
+    color: #ffb347;
+}
