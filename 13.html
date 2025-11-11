@@ -38,7 +38,7 @@
       padding: 0 1rem;
       opacity: 0;
     }
-    
+
     .collapsible.active + .content {
       max-height: 300px;
       padding: 1rem;
@@ -74,15 +74,47 @@
         <p>
             In order to understand cybersecurity, a basic understanding of hiding messages is necessary. Today, nearly everything stored online is encrypted so that hackers intercepting data can't read it without the key. "Keys" in cryptography act as a secret piece of information shared between the sender and recipient. For example, if Bob is sending Alice a message, they can meet in person and decide on a key to use, usually a word, number, or whole phrase depending on the style of encryption. Then, when Bob sends the message, no one else can read it other than Alice, since only she has the key.
         </p>
+        <button class="collapsible">Before Keys</button>
+        <div class="content">
+            <p>In very early ciphers, like the Caesar cipher, keys weren't used. Instead, they had a system where the key was always the same. This made the cipher very vulnerable, since anyone who learned how the cipher worked could read every message ever made with the cipher.</p>
+        </div>
+
+    </aside>
+    <aside >
+        <img src="ciphergraph.png" width="70%" height="30%" style="box-shadow: 5px 5px 40px var(--purple1); border-radius: 40px;">
     </aside>
     <aside>
-        some picture or diagram or something
+        <p>
+            In the diagram, the top alphabet represents the <i>ciphertext</i>, or the message after we've encrypted it. The lower alphabet is unchanged and represents the <i>plaintext</i>.
+        </p>
+        <p>
+            This is a map of the Caesar cipher in its base form, with a right shift of 3. This is represented by the first 3 letters to be moved from the beginning of the alphabet to the end, shown by the arrow. From here, the plaintext can be encrypted by taking a character and finding it in the plaintext alphabet and converting it to the corresponding character in the upper alphabet, shown by the vertical arrow from D to G.
+        </p>
+    </aside>
+    <aside>
+        <!--
+        Add a quiz here with an example of caesar cipher, like "encrypt this" or "decrypt that"
+        -->
     </aside>
     <footer>
         <div>Team Phishify</div>
     </footer>
     <br>
     <script src="transition.js"></script>
+    <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (this.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
