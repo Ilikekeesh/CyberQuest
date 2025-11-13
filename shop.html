@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="transition.css" />
     <style>
         /* === Halloween Theme === */
+        
         body.halloween-theme {
             background: radial-gradient(circle at center, #2b0000, #4b0015); /* dark red/purple */
             color: #ffdd99; /* spooky text color */
@@ -100,7 +101,9 @@
             <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
                 <h2>Theme Unlock</h2>
                 <p>Switch to a spooky Halloween color scheme!</p>
-                <button id="theme-toggle">Activate Halloween Theme</button>
+                <button id="normal-theme-toggle">Activate Classic Theme</button>
+                <button id="dark-theme-toggle">Activate Dark Theme</button>
+                <button id="halloween-theme-toggle">Activate Halloween Theme</button>
             </div>
         </div>
     </main>
@@ -125,24 +128,42 @@
     document.getElementById("points").textContent = points;
 
     // === HALLOWEEN THEME TOGGLE ===
-    const toggleButton = document.getElementById('theme-toggle');
+    const normalToggle = document.getElementById('normal-theme-toggle');
+    const darkToggle = document.getElementById('dark-theme-toggle');
+    const halloweenToggle = document.getElementById('halloween-theme-toggle');
     const body = document.body;
 
     // Load saved theme on page load
     const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'normal') {
+        body.classList.add('root');
+    }
     if (savedTheme === 'halloween') {
-        body.classList.add('halloween-theme');
+        body.classList.add('theme-halloween');
+    }
+    if (savedTheme === 'dark') {
+        body.classList.add('theme-dark');
     }
 
     // Toggle theme on button click
-    toggleButton.addEventListener('click', () => {
-        body.classList.toggle('halloween-theme');
-        if (body.classList.contains('halloween-theme')) {
-            localStorage.setItem('theme', 'halloween');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
+    normalToggle.addEventListener('click', () => {
+        purgeThemes();
+        localStorage.setItem('theme', 'normal');
     });
+    darkToggle.addEventListener('click', () => {
+        purgeThemes();
+        body.classList.add('theme-dark');
+        localStorage.setItem('theme', 'dark');
+    });
+    halloweenToggle.addEventListener('click', () => {
+        purgeThemes();
+        body.classList.add('theme-halloween');
+        localStorage.setItem('theme', 'halloween');
+    });
+
+    function purgeThemes() {
+        body.classList.remove('theme-normal','theme-dark','theme-halloween');
+    }
 </script>
 
 </body>

@@ -20,6 +20,44 @@
 --black: #000;
 }
 
+.theme-dark {
+--pink0: #3b1e3b;
+--pink1: #7a3f73;
+--purple0: #602080;
+--purple1: #501570;
+--purple2: #3b0d50;
+--purple3: #200030;
+--lightblue0: #444;
+--lightblue1: #333;
+--lightblue2: #222;
+--lightblue3: #111;
+--blue0: #0e124a;
+--blue1: #050829;
+--blue2: #020417;
+--blue3: #000000;
+--white: #fff;
+--black: #000;
+}
+
+.theme-halloween {
+  --pink0: #ffe6ff;
+  --pink1: #ffb3ec;
+  --purple0: #ffae7c;
+  --purple1: #f5843d;
+  --purple2: #d34d0f;
+  --purple3: #852c0c;
+  --lightblue0: #fff4c8;
+  --lightblue1: #f4e59b;
+  --lightblue2: #eec974;
+  --lightblue3: #c49352;
+  --blue0: #986d38;
+  --blue1: #87552a;
+  --blue2: #6a3919;
+  --blue3: #4a230e;
+  --white: #fff1ed;
+  --black: #210000;
+  }
+  
 
 /* General Reset */
 * {
@@ -36,7 +74,7 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.8;
-    color: #fff;
+    color: var(--white);
     min-height: 100vh;
     padding-top: 30px;
 
@@ -64,6 +102,11 @@ header {
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
+
+nav {
+  box-shadow: 0 0 15px var(--pink1);
+}
+
 /* Navigation Bar */
 nav ul {
     list-style: none;
@@ -76,7 +119,7 @@ nav ul li a {
     display: inline-block;
     text-decoration: none;
     font-size: 2.5vw;
-    color: #fff;
+    color: var(--white);
     font-weight: bold;
     padding: 0rem 0rem;
     border-radius: 8px;
@@ -85,7 +128,7 @@ nav ul li a {
 
 nav ul li a.active {
     background: var(--pink);
-    color: #000;
+    color: var(--black);
     font-size: 2.2rem;
 }
 
@@ -203,9 +246,9 @@ aside {
 
 .logo {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 6vw;
+    top: 1.7rem;
+    left: 1.5rem;
+    width: 4vw;
     height: auto;
     margin-top: 2.6vh;
     max-width: 512px;
@@ -437,8 +480,6 @@ aside {
 .halloween-theme header,
 .halloween-theme nav {
     background: rgba(30, 0, 30, 0.7);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 15px #ff8c00;
 }
 
 .halloween-theme a.navlink {
