@@ -1,5 +1,5 @@
 
-const body = document.body; //this section is to make themes consistent across pages :D
+const body = document.documentElement; //this section is to make themes consistent across pages :D
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'normal') {
     body.classList.add('root');
