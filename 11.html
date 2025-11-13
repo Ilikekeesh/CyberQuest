@@ -6,141 +6,7 @@
   <title>Cybersecurity Lesson: CIA Triad</title>
   <link rel="stylesheet" href="transition.css">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* === Animated Background === */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      margin: 0;
-      padding: 2rem;
-      font-family: "Poppins", sans-serif;
-      line-height: 1.6;
-      color: #fff;
-      background: linear-gradient(135deg, #950fd3, #600c85, #2e2a87, #1e3c72);
-      background-size: 300% 300%;
-      animation: purpleGradient 19s ease infinite;
-    }
-
-    @keyframes purpleGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* === Glassmorphism Container === */
-    .container {
-      max-width: 900px;
-      width: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 182, 193, 0.25),
-        rgba(144, 238, 144, 0.25),
-        rgba(255, 182, 193, 0.25)
-      );
-      background-size: 400% 400%;
-      animation: pinkGreenShift 30s ease infinite;
-      border-radius: 16px;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 2.5rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-      animation: floatUp 1.2s ease;
-    }
-
-    @keyframes pinkGreenShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* === Entrance Float Animation === */
-    @keyframes floatUp {
-      0% { transform: translateY(30px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    /* === Collapsible Panels === */
-    .collapsible {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffb3ec;
-      cursor: pointer;
-      padding: 0.75rem 1rem;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .collapsible:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #ffb3ec;
-    }
-
-    .content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease;
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid #ffb3ec;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      padding: 0 1rem;
-      opacity: 0;
-    }
-
-    .collapsible.active + .content {
-      max-height: 300px;
-      padding: 1rem;
-      opacity: 1;
-    }
-
-    /* === Example Box === */
-    .example {
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* === Buttons (Navigation) === */
-    .buttonSquish {
-      border: none;
-      border-radius: 12px;
-      padding: 0.9rem 2rem;
-      margin: 1rem 0.5rem;
-      font-weight: bold;
-      background: linear-gradient(135deg, #b53df5, #6f00c9);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .buttonSquish:hover {
-      transform: scale(1.08);
-      background: linear-gradient(135deg, #d07cff, #9a36db);
-      box-shadow: 0 0 20px #ffb3ec;
-    }
-
-    /* === Responsive Tweaks === */
-    @media (max-width: 768px) {
-      .container {
-        padding: 1.5rem;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  
   <header>
     <nav>
             <div class="logo-top-left">
@@ -149,7 +15,7 @@
                 </a>
             </div>
             <ul>
-                <li><a href="#">Map</a></li>
+                <li><a href="map.html" class="navlink">Map</a></li>
                 <li><a href="classroom.html" class="navlink">Classroom</a></li>
                 <li><a href="shop.html" class="navlink">Shop</a></li>
                 <li><a href="login.html" class="navlink">Login</a></li>
@@ -164,8 +30,8 @@
 <body>
     
     
-  <div class="container">
-    <h1>Cybersecurity Lesson: The CIA Triad</h1>
+  <aside>
+    <h1>The CIA Triad</h1>
 
     <h2>Introduction</h2>
     <p>In today’s digital world, protecting information is more important than ever. From personal accounts to corporate data, cybersecurity helps safeguard sensitive information from unauthorized access, theft, or damage. Understanding cybersecurity is essential for anyone using technology.</p>
@@ -179,7 +45,7 @@
     </ul>
 
     <h2>The CIA Triad</h2>
-    <p>The CIA Triad is a foundational model in cybersecurity, representing <strong>Confidentiality, Integrity, and Availability</strong>. Click each section to learn more:</p>
+    <p>The CIA Triad is a foundational model in cybersecurity, representing <strong>Confidentiality, Integrity, and Availability</strong>.</p>
 
     <button class="collapsible">Confidentiality</button>
     <div class="content">
@@ -196,16 +62,6 @@
       <p>Ensuring information and systems are accessible when needed. Example: Using backups, redundant servers, and disaster recovery plans.</p>
     </div>
 
-    <h2>Real-World Example: Online Banking</h2>
-    <button class="collapsible">Click to expand</button>
-    <div class="content example">
-      <ul>
-        <li><strong>Confidentiality:</strong> Only the account holder can see their balance.</li>
-        <li><strong>Integrity:</strong> Transactions are accurate and unchanged.</li>
-        <li><strong>Availability:</strong> The website is accessible whenever customers need it.</li>
-      </ul>
-    </div>
-
     <h2>Conclusion</h2>
     <p>Cybersecurity is essential for protecting information, maintaining trust, and ensuring systems work as intended. By understanding and applying the CIA Triad, individuals and organizations can build safer digital environments.</p>
 
@@ -213,12 +69,11 @@
       <a href="map.html" class="navlink"><button class="buttonSquish">← Back to Map</button></a>
       <a href="12.html" class="navlink"><button class="buttonSquish">Next Adventure  →</button></a>
     </div>
-
+    </aside>
     <footer>
       &copy; Team Phishify | CIA Triad Lesson
     </footer>
     <br>
-  </div>
   <script src="transition.js"></script>
   <script>
     const collapsibles = document.querySelectorAll(".collapsible");
