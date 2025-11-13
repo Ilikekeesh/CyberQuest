@@ -131,19 +131,6 @@
     const normalToggle = document.getElementById('normal-theme-toggle');
     const darkToggle = document.getElementById('dark-theme-toggle');
     const halloweenToggle = document.getElementById('halloween-theme-toggle');
-    const body = document.body;
-
-    // Load saved theme on page load
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'normal') {
-        body.classList.add('root');
-    }
-    if (savedTheme === 'halloween') {
-        body.classList.add('theme-halloween');
-    }
-    if (savedTheme === 'dark') {
-        body.classList.add('theme-dark');
-    }
 
     // Toggle theme on button click
     normalToggle.addEventListener('click', () => {
