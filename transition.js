@@ -10,6 +10,9 @@ if (savedTheme === 'halloween') {
 if (savedTheme === 'dark') {
     body.classList.add('theme-dark');
 }
+if (savedTheme === 'autumn') {
+    body.classList.add('theme-autumn');
+}
 
 
 window.onload = () => {

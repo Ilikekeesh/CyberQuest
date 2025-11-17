@@ -104,6 +104,7 @@
                 <button id="normal-theme-toggle">Activate Classic Theme</button>
                 <button id="dark-theme-toggle">Activate Dark Theme</button>
                 <button id="halloween-theme-toggle">Activate Halloween Theme</button>
+                <button id="autumn-theme-toggle">Activate Autumn Theme</button>
             </div>
         </div>
     </main>
@@ -131,6 +132,7 @@
     const normalToggle = document.getElementById('normal-theme-toggle');
     const darkToggle = document.getElementById('dark-theme-toggle');
     const halloweenToggle = document.getElementById('halloween-theme-toggle');
+    const autumnToggle = document.getElementById('autumn-theme-toggle');
 
     // Toggle theme on button click
     normalToggle.addEventListener('click', () => {
@@ -147,9 +149,14 @@
         body.classList.add('theme-halloween');
         localStorage.setItem('theme', 'halloween');
     });
+    autumnToggle.addEventListener('click', () => {
+        purgeThemes();
+        body.classList.add('theme-autumn');
+        localStorage.setItem('theme', 'autumn');
+    });
 
     function purgeThemes() {
-        body.classList.remove('theme-normal','theme-dark','theme-halloween');
+        body.classList.remove('theme-normal','theme-dark','theme-halloween','theme-autumn');
     }
 </script>
 

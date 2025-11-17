@@ -42,22 +42,40 @@
 .theme-halloween {
   --pink0: #ffe6ff;
   --pink1: #ffb3ec;
-  --purple0: #ffae7c;
-  --purple1: #f5843d;
-  --purple2: #d34d0f;
-  --purple3: #852c0c;
-  --lightblue0: #fff4c8;
-  --lightblue1: #f4e59b;
-  --lightblue2: #eec974;
-  --lightblue3: #c49352;
-  --blue0: #986d38;
-  --blue1: #87552a;
-  --blue2: #6a3919;
-  --blue3: #4a230e;
+  --purple0: #ff7c7c;
+  --purple1: #ff302c;
+  --purple2: #cd2822;
+  --purple3: #9c1a1a;
+  --lightblue0: #ffc8c8;
+  --lightblue1: #f38787;
+  --lightblue2: #ee5f5f;
+  --lightblue3: #af2f2f;
+  --blue0: #a02626;
+  --blue1: #8a1f1f;
+  --blue2: #7a1111;
+  --blue3: #4f0707;
   --white: #fff1ed;
   --black: #210000;
   }
   
+.theme-autumn {
+  --pink0: #ffefb4;
+  --pink1: #ffc87f;
+  --purple0: #f47d6b;
+  --purple1: #f4572f;
+  --purple2: #e4440f;
+  --purple3: #9e2214;
+  --lightblue0: #ffac68;
+  --lightblue1: #ec8c37;
+  --lightblue2: #d17c27;
+  --lightblue3: #ce891a;
+  --blue0: #9f6e0c;
+  --blue1: #99650b;
+  --blue2: #64550a;
+  --blue3: #474307;
+  --white: #fff1ed;
+  --black: #210000;
+  }
 
 /* General Reset */
 * {
@@ -479,8 +497,13 @@ aside {
 }
 #halloween-theme-toggle {
   background: #f5843d;
-  color: #420505;
+  color: #7a0505;
 }
+#autumn-theme-toggle {
+  background: #bd791a;
+  color: #e8ccbd;
+}
+
 
 .collapsible {
       background: rgba(255, 255, 255, 0.1);
