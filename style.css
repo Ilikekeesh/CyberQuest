@@ -21,18 +21,18 @@
 }
 
 .theme-dark {
---pink0: #3b1e3b;
---pink1: #7a3f73;
---purple0: #602080;
---purple1: #501570;
---purple2: #3b0d50;
---purple3: #200030;
---lightblue0: #444;
---lightblue1: #333;
---lightblue2: #222;
---lightblue3: #111;
---blue0: #0e124a;
---blue1: #050829;
+--pink0: #ad06ad;
+--pink1: #820674;
+--purple0: #5d0e84;
+--purple1: #470d66;
+--purple2: #3a0751;
+--purple3: #210231;
+--lightblue0: #1c247a;
+--lightblue1: #1d0a86;
+--lightblue2: #0e055f;
+--lightblue3: #130043;
+--blue0: #010538;
+--blue1: #02052b;
 --blue2: #020417;
 --blue3: #000000;
 --white: #fff;
@@ -469,44 +469,17 @@ aside {
     width: 4vw;
     height: 3vw;
   }
-
-
-  /* === HALLOWEEN THEME === */
-.halloween-theme {
-    background: radial-gradient(circle at center, #0a0a0a, #1b0000);
-    color: #ff8c00; /* orange text */
+#normal-theme-toggle {
+  background: #b53df5;
+  color: #fff;
 }
-
-.halloween-theme header,
-.halloween-theme nav {
-    background: rgba(30, 0, 30, 0.7);
+#dark-theme-toggle {
+  background: #5d0e84;
+  color: #fff;
 }
-
-.halloween-theme a.navlink {
-    color: #ff8c00;
-}
-
-.halloween-theme .btn {
-    background: #ff4500; /* bright orange button */
-    color: black;
-    border: 2px solid #ff8c00;
-    text-shadow: 0 0 10px #ff8c00;
-    font-weight: bold;
-}
-
-.halloween-theme .btn:hover {
-    background: #ff8c00;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ff8c00;
-}
-
-.halloween-theme footer {
-    background: rgba(30, 0, 30, 0.7);
-    color: #ff8c00;
-}
-
-.halloween-theme main {
-    color: #ffb347;
+#halloween-theme-toggle {
+  background: #f5843d;
+  color: #420505;
 }
 
 .collapsible {
