@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cybersecurity Lesson: CIA Triad</title>
-  <link rel="stylesheet" href="transition.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | CyberQuest</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="transition.css" />
   <style>
     /* === Animated Background === */
     body {
@@ -62,6 +63,31 @@
       100% { transform: translateY(0); opacity: 1; }
     }
 
+    /* === Headings === */
+    h1, h2 {
+      color: #ffe6ff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2.8rem;
+    }
+
+    p, ul {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
     /* === Collapsible Panels === */
     .collapsible {
       background: rgba(255, 255, 255, 0.1);
@@ -85,17 +111,7 @@
       box-shadow: 0 0 10px #ffb3ec;
     }
 
-    .content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease;
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid #ffb3ec;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      padding: 0 1rem;
-      opacity: 0;
-    }
+    
 
     .collapsible.active + .content {
       max-height: 300px;
@@ -131,6 +147,13 @@
       box-shadow: 0 0 20px #ffb3ec;
     }
 
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #d8b8f6;
+    }
+
     /* === Responsive Tweaks === */
     @media (max-width: 768px) {
       .container {
@@ -141,22 +164,6 @@
       }
     }
   </style>
-  <header>
-    <nav>
-            <div class="logo-top-left">
-                <a href="home.html" class="navlink">
-                    <img src="whitelogo.png" alt="CyberQuest Logo" class="logo"/>
-                </a>
-            </div>
-            <ul>
-                <li><a href="#">Map</a></li>
-                <li><a href="classroom.html" class="navlink">Classroom</a></li>
-                <li><a href="shop.html" class="navlink">Shop</a></li>
-                <li><a href="login.html" class="navlink">Login</a></li>
-                <li><a href="signup.html" class="navlink">Sign Up</a></li>
-            </ul>
-        </nav>
-  </header>
 </head>
 <div class="transition transition-1 is-active">
     <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
