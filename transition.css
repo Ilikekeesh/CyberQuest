@@ -9,7 +9,7 @@ align-content: left;
 background-color: var(--dark);
 /*pointer-events: none; */
 transition: 0.15s ease-out;
-background: linear-gradient(175deg, #aa27e7, #781fbc, #4f30ca, #394aba);
+background: linear-gradient(175deg, var(--purple1), var(--purple2), var(--blue1), var(--lightblue3));
 background-size: 100%
 }
 

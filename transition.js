@@ -1,3 +1,20 @@
+
+const body = document.documentElement; //this section is to make themes consistent across pages :D
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'normal') {
+    body.classList.add('root');
+}
+if (savedTheme === 'halloween') {
+    body.classList.add('theme-halloween');
+}
+if (savedTheme === 'dark') {
+    body.classList.add('theme-dark');
+}
+if (savedTheme === 'autumn') {
+    body.classList.add('theme-autumn');
+}
+
+
 window.onload = () => {
     const transition_el = document.querySelector('.transition'); //might want to make this id? according to tutorial
     const anchors = document.querySelectorAll('.navlink');

@@ -2,9 +2,80 @@
     Call them using a format like "var(--dark)".
      Might make it easier to switch color schemes more easily in the future, maybe let people buy themes?
      Want to try to maybe move all colors over to this at some point.*/
- --dark: #5c0068;
+--pink0: #ffe6ff;
+--pink1: #ffb3ec;
+--purple0: #d07cff;
+--purple1: #b53df5;
+--purple2: #950fd3;
+--purple3: #600c85;
+--lightblue0: #c8c8ff;
+--lightblue1: #9b9bf4;
+--lightblue2: #747aee;
+--lightblue3: #525bc4;
+--blue0: #3f3898;
+--blue1: #2e2a87;
+--blue2: #19306a;
+--blue3: #0e124a;
+--white: #fff;
+--black: #000;
 }
 
+.theme-dark {
+--pink0: #ad06ad;
+--pink1: #820674;
+--purple0: #5d0e84;
+--purple1: #470d66;
+--purple2: #3a0751;
+--purple3: #210231;
+--lightblue0: #1c247a;
+--lightblue1: #1d0a86;
+--lightblue2: #0e055f;
+--lightblue3: #130043;
+--blue0: #010538;
+--blue1: #02052b;
+--blue2: #020417;
+--blue3: #000000;
+--white: #fff;
+--black: #000;
+}
+
+.theme-halloween {
+  --pink0: #ffe6ff;
+  --pink1: #ffb3ec;
+  --purple0: #ff7c7c;
+  --purple1: #ff302c;
+  --purple2: #cd2822;
+  --purple3: #9c1a1a;
+  --lightblue0: #ffc8c8;
+  --lightblue1: #f38787;
+  --lightblue2: #ee5f5f;
+  --lightblue3: #af2f2f;
+  --blue0: #a02626;
+  --blue1: #8a1f1f;
+  --blue2: #7a1111;
+  --blue3: #4f0707;
+  --white: #fff1ed;
+  --black: #210000;
+  }
+  
+.theme-autumn {
+  --pink0: #ffefb4;
+  --pink1: #ffc87f;
+  --purple0: #f47d6b;
+  --purple1: #f4572f;
+  --purple2: #e4440f;
+  --purple3: #9e2214;
+  --lightblue0: #ffac68;
+  --lightblue1: #ec8c37;
+  --lightblue2: #d17c27;
+  --lightblue3: #ce891a;
+  --blue0: #9f6e0c;
+  --blue1: #99650b;
+  --blue2: #64550a;
+  --blue3: #474307;
+  --white: #fff1ed;
+  --black: #210000;
+  }
 
 /* General Reset */
 * {
@@ -14,19 +85,19 @@
 }
 
 html {
-    background-color: #600c85;
+    background-color: var(--purple3);
 }
 
 /* Fonts & Colors */
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.8;
-    color: #fff;
+    color: var(--white);
     min-height: 100vh;
     padding-top: 30px;
 
     /* Animated Purple-Blue Background */
-    background: linear-gradient(135deg, #950fd3, #600c85, #2e2a87, #1e3c72);
+    background: linear-gradient(135deg, var(--purple2), var(--purple3), var(--blue1), var(--blue2));
     background-size: 300% 300%;
     animation: purpleGradient 19s ease infinite;
 }
@@ -49,6 +120,11 @@ header {
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
+
+nav {
+  box-shadow: 0 0 15px var(--pink1);
+}
+
 /* Navigation Bar */
 nav ul {
     list-style: none;
@@ -61,7 +137,7 @@ nav ul li a {
     display: inline-block;
     text-decoration: none;
     font-size: 2.5vw;
-    color: #fff;
+    color: var(--white);
     font-weight: bold;
     padding: 0rem 0rem;
     border-radius: 8px;
@@ -69,13 +145,13 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    background: #ffb3ec;
-    color: #000;
+    background: var(--pink);
+    color: var(--black);
     font-size: 2.2rem;
 }
 
 nav ul li a:hover {
-    color: #e1adff;
+    color: var(--purple0);
     transform: scale(1.2);
 }
 
@@ -87,9 +163,9 @@ html {
 button{
     border-radius: 2%;
     padding: .7rem;
-    background: #e1adff;
+    background: var(--purple0);
     border-radius: 6px;
-    border: 2px #f9b1ec;
+    border: 2px var(--purple1);
 }
 
 .buttonSquish{
@@ -133,7 +209,7 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    color: #ffe6ff;
+    color: var(--pink0);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
@@ -188,9 +264,9 @@ aside {
 
 .logo {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 6vw;
+    top: 1.7rem;
+    left: 1.5rem;
+    width: 4vw;
     height: auto;
     margin-top: 2.6vh;
     max-width: 512px;
@@ -230,18 +306,18 @@ aside {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white; /* Text color white */
+  color: var(--white); /* Text color white */
   border-radius: 16px;
   padding: 1rem;
   font-size: 1.2rem;
 }
 
 .flip-card-front {
-  background: linear-gradient(135deg, #ffb6c1, #ffccdd); /* light pink gradient */
+  background: linear-gradient(135deg, var(--purple0), var(--pink1)); /* light pink gradient */
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #90ee90, #ccffcc); /* light green gradient */
+  background: linear-gradient(135deg, var(--purple1), var(--purple0)); /* light green gradient */
   transform: rotateY(180deg);
 }
 
@@ -299,7 +375,7 @@ aside {
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    color: #fff;
+    color: var(--white);
     transform: translateY(40px);
     animation: floatUp 0.8s ease forwards;
   }
@@ -307,7 +383,7 @@ aside {
   .popup-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px #ffb3ec;
+    text-shadow: 0 0 10px var(--pink1);
   }
   
   .popup-content p {
@@ -317,18 +393,18 @@ aside {
   
   .popup-content button {
     margin-top: 1.5rem;
-    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    background: linear-gradient(135deg, var(--purple1), var(--purple3));
     border: none;
     padding: 0.8rem 2rem;
     border-radius: 10px;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.3s;
   }
   
   .popup-content button:hover {
-    background: linear-gradient(135deg, #d07cff, #9a36db);
+    background: linear-gradient(135deg, var(--pink1), var(--purple1));
     transform: scale(1.05);
   }
 
@@ -377,7 +453,7 @@ aside {
   }
 
   #finish-level {
-    background: linear-gradient(135deg, #2b1055, #7597de, #5781dc);
+    background: linear-gradient(135deg, #2b1055, var(--lightblue2), var(--lightblue3));
     color: white;
     font-weight: bold;
     font-size: 1.3rem;
@@ -390,7 +466,7 @@ aside {
   }
   
   #finish-level:hover {
-    background: linear-gradient(135deg, #b53df5, #6f00c9);
+    background: linear-gradient(135deg, var(--purple1), var(--purple3));
     transform: scale(1.08);
   }
 
@@ -400,12 +476,10 @@ aside {
     display: flex;
     gap: 5vw;
   }
-
   .shop-item {
     width: 30vw;
     height: 30vw;
   }
-
   .shop-item-desc {
     font-size: 2vw;
   }
@@ -413,42 +487,60 @@ aside {
     width: 4vw;
     height: 3vw;
   }
-  /* === HALLOWEEN THEME === */
-.halloween-theme {
-    background: radial-gradient(circle at center, #0a0a0a, #1b0000);
-    color: #ff8c00; /* orange text */
+#normal-theme-toggle {
+  background: #b53df5;
+  color: #fff;
+}
+#dark-theme-toggle {
+  background: #5d0e84;
+  color: #fff;
+}
+#halloween-theme-toggle {
+  background: #f5843d;
+  color: #7a0505;
+}
+#autumn-theme-toggle {
+  background: #bd791a;
+  color: #e8ccbd;
 }
 
-.halloween-theme header,
-.halloween-theme nav {
-    background: rgba(30, 0, 30, 0.7);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 15px #ff8c00;
-}
 
-.halloween-theme a.navlink {
-    color: #ff8c00;
-}
+.collapsible {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffb3ec;
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
 
-.halloween-theme .btn {
-    background: #ff4500; /* bright orange button */
-    color: black;
-    border: 2px solid #ff8c00;
-    text-shadow: 0 0 10px #ff8c00;
-    font-weight: bold;
-}
+    .collapsible:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.02);
+      box-shadow: 0 0 10px #ffb3ec;
+    }
 
-.halloween-theme .btn:hover {
-    background: #ff8c00;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ff8c00;
-}
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 3px solid #ffb3ec;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      opacity: 0;
+    }
 
-.halloween-theme footer {
-    background: rgba(30, 0, 30, 0.7);
-    color: #ff8c00;
-}
-
-.halloween-theme main {
-    color: #ffb347;
-}
+    .collapsible.active + .content {
+      max-height: 300px;
+      padding: 1rem;
+      opacity: 1;
+    }

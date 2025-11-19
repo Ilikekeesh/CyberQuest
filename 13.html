@@ -1,50 +1,11 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Cryptography </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="transition.css">
-    <style>
-    .collapsible {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffb3ec;
-      cursor: pointer;
-      padding: 0.75rem 1rem;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .collapsible:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #ffb3ec;
-    }
-
-    .content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.3s ease;
-      background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid #ffb3ec;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      padding: 0 1rem;
-      opacity: 0;
-    }
-    
-    .collapsible.active + .content {
-      max-height: 300px;
-      padding: 1rem;
-      opacity: 1;
-    }
-    </style>
 </head>
     <body>
     <header>
@@ -68,21 +29,61 @@
         <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading">
     </div>
     <aside>
+        <h1>Introduction to Cryptography</h1>
         <p>
             Cryptography refers to the field of hiding messages. While cryptography as a concept is almost 4000 years old, it's a constantly developing field, even now. Modern improvements in cryptography include quantum cryptography, a theoretically unbreakable encryption.
         </p>
         <p>
             In order to understand cybersecurity, a basic understanding of hiding messages is necessary. Today, nearly everything stored online is encrypted so that hackers intercepting data can't read it without the key. "Keys" in cryptography act as a secret piece of information shared between the sender and recipient. For example, if Bob is sending Alice a message, they can meet in person and decide on a key to use, usually a word, number, or whole phrase depending on the style of encryption. Then, when Bob sends the message, no one else can read it other than Alice, since only she has the key.
         </p>
+        <button class="collapsible">Before Keys</button>
+        <div class="content">
+            <p>In very early ciphers, like the Caesar cipher, keys weren't used. Instead, they had a system where the key was always the same. This made the cipher very vulnerable, since anyone who learned how the cipher worked could read every message ever made with the cipher.</p>
+        </div>
+
+    </aside>
+    <aside >
+        <img src="ciphergraph.png" width="70%" height="30%" style="box-shadow: 5px 5px 40px var(--purple1); border-radius: 40px;">
     </aside>
     <aside>
-        some picture or diagram or something
+        <p>
+            In the diagram, the top alphabet represents the <i>ciphertext</i>, or the message after we've encrypted it. The lower alphabet is unchanged and represents the <i>plaintext</i>.
+        </p>
+        <p>
+            This is a map of the Caesar cipher in its base form, with a right shift of 3. This is represented by the first 3 letters to be moved from the beginning of the alphabet to the end, shown by the arrow. From here, the plaintext can be encrypted by taking a character and finding it in the plaintext alphabet and converting it to the corresponding character in the upper alphabet, shown by the vertical arrow from D to G.
+        </p>
+    </aside>
+    <aside>
+        quiz
+        <!--
+        Add a quiz here with an example of caesar cipher, like "encrypt this" or "decrypt that"
+        -->
+    </aside>
+    <aside>
+        <div style="text-align:center;">
+        <a href="map.html" class="navlink"><button class="buttonSquish">← Back to Map</button></a>
+        <a href="14.html" class="navlink"><button class="buttonSquish">Next Adventure  →</button></a>
+    </div>
     </aside>
     <footer>
         <div>Team Phishify</div>
     </footer>
     <br>
     <script src="transition.js"></script>
+    <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(btn => {
+      btn.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (this.classList.contains("active")) {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
