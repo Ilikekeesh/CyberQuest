@@ -46,11 +46,11 @@
   <script src="transition.js"></script>
   <script>
     // Display the stored score
-    window.onload = function() {
+    window.addEventListener("load", () => {
       const score = localStorage.getItem("quizScore") || 0;
       const total = localStorage.getItem("totalQuestions") || 0;
       document.getElementById("scoreText").innerText = `Your score: ${score} / ${total}`;
-    }
+    });
 
     function retryQuiz() {
       window.location.href = "110.html";

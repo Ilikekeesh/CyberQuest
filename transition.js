@@ -15,7 +15,7 @@ if (savedTheme === 'autumn') {
 }
 
 
-window.onload = () => {
+window.addEventListener("load", () => {
     const transition_el = document.querySelector('.transition'); //might want to make this id? according to tutorial
     const anchors = document.querySelectorAll('.navlink');
     let animTime = 200;
@@ -46,4 +46,4 @@ window.onload = () => {
             }, animTime)
         })
     }
-}
+});
