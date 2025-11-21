@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,83 @@
   <link rel="stylesheet" href="transition.css">
   <link href="style.css">
   <style>
+
+:root { /*i kinda have to have this color dictionary here een though i really dont want to. otherswise i cant switch the theme on this page.*/
+--pink0: #ffe6ff;
+--pink1: #ffb3ec;
+--purple0: #d07cff;
+--purple1: #b53df5;
+--purple2: #950fd3;
+--purple3: #600c85;
+--lightblue0: #c8c8ff;
+--lightblue1: #9b9bf4;
+--lightblue2: #747aee;
+--lightblue3: #525bc4;
+--blue0: #3f3898;
+--blue1: #2e2a87;
+--blue2: #19306a;
+--blue3: #0e124a;
+--white: #fff;
+--black: #000;
+}
+
+.theme-dark {
+--pink0: #ef47ef;
+--pink1: #a80a96;
+--purple0: #5d0e84;
+--purple1: #470d66;
+--purple2: #3a0751;
+--purple3: #210231;
+--lightblue0: #1c247a;
+--lightblue1: #1d0a86;
+--lightblue2: #0e055f;
+--lightblue3: #130043;
+--blue0: #010538;
+--blue1: #02052b;
+--blue2: #020417;
+--blue3: #000000;
+--white: #c8c9cd;
+--black: #000;
+}
+
+.theme-halloween {
+  --pink0: #ffe6ff;
+  --pink1: #ffb3ec;
+  --purple0: #ff7c7c;
+  --purple1: #ff302c;
+  --purple2: #cd2822;
+  --purple3: #9c1a1a;
+  --lightblue0: #ffc8c8;
+  --lightblue1: #f38787;
+  --lightblue2: #ee5f5f;
+  --lightblue3: #af2f2f;
+  --blue0: #a02626;
+  --blue1: #8a1f1f;
+  --blue2: #7a1111;
+  --blue3: #4f0707;
+  --white: #fff1ed;
+  --black: #210000;
+  }
+  
+.theme-autumn {
+  --pink0: #ffefb4;
+  --pink1: #ffc87f;
+  --purple0: #f47d6b;
+  --purple1: #f4572f;
+  --purple2: #e4440f;
+  --purple3: #9e2214;
+  --lightblue0: #ffac68;
+  --lightblue1: #ec8c37;
+  --lightblue2: #d17c27;
+  --lightblue3: #ce891a;
+  --blue0: #9f6e0c;
+  --blue1: #99650b;
+  --blue2: #64550a;
+  --blue3: #474307;
+  --white: #fff1ed;
+  --black: #210000;
+  }
+
     body {
       display: flex;
       justify-content: center;
@@ -16,8 +97,8 @@
       padding: 2rem;
       font-family: "Poppins", sans-serif;
       line-height: 1.6;
-      color: #600c85;
-      background: linear-gradient(135deg, #950fd3, #600c85, #2e2a87, #1e3c72);
+      color: var(--purple3);
+      background: linear-gradient(135deg, var(--purple2), var(--purple3), var(--blue1), var(--blue2));
       background-size: 300% 300%;
       animation: purpleGradient 19s ease infinite;
     }
@@ -60,7 +141,7 @@
     }
 
     h1, h2 {
-      color: #ffe6ff;
+      color: var(--pink0);
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
@@ -74,7 +155,7 @@
 
     .collapsible {
       background: rgba(255, 255, 255, 0.1);
-      color: #ffb3ec;
+      color: var(--pink1);
       cursor: pointer;
       padding: 0.75rem 1rem;
       width: 100%;
@@ -91,7 +172,7 @@
     .collapsible:hover {
       background: rgba(255, 255, 255, 0.25);
       transform: scale(1.02);
-      box-shadow: 0 0 10px #ffb3ec;
+      box-shadow: 0 0 10px var(--pink1);
     }
 
     .content {
@@ -99,7 +180,7 @@
       overflow: hidden;
       transition: max-height 0.4s ease, opacity 0.3s ease;
       background: rgba(0, 0, 0, 0.3);
-      border-left: 3px solid #ffb3ec;
+      border-left: 3px solid var(--pink1);
       border-radius: 10px;
       margin-bottom: 1rem;
       padding: 0 1rem;
@@ -125,7 +206,7 @@
       padding: 0.9rem 2rem;
       margin: 1rem 0.5rem;
       font-weight: bold;
-      background: linear-gradient(135deg, #b53df5, #6f00c9);
+      background: linear-gradient(135deg, var(--purple1), var(--purple3));
       color: #fff;
       cursor: pointer;
       transition: transform 0.2s ease, background 0.3s ease;
@@ -134,15 +215,15 @@
 
     .buttonSquish:hover {
       transform: scale(1.08);
-      background: linear-gradient(135deg, #d07cff, #9a36db);
-      box-shadow: 0 0 20px #ffb3ec;
+      background: linear-gradient(135deg, var(--purple0), var(--purple2));
+      box-shadow: 0 0 20px var(--pink1);
     }
 
     footer {
       text-align: center;
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #d8b8f6;
+      color: var(--pink0);
     }
 
   </style>
