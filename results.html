@@ -37,7 +37,17 @@
       <p class="score" id="scoreText">Your score: 0 / 0</p>
       <button class="btn" onclick="retryQuiz()">Try Again</button>
     </section>
+
   </main>
+
+  <div id="level-popup" class="popup hidden">
+    <div class="popup-content">
+    <h2 id="level-completed">🎉 Quiz Completed!</h2>
+    <p id="score-popup"><strong>Correct:</strong> <span id="score-value">0</span></p>
+    <p id="points-popup"><strong>Points:</strong> <span id="points-value">0</span></p>
+    <button id="close-popup">Close</button>
+    </div>
+  </div>
 
   <footer>
     <div>Team Phishify</div>
@@ -50,6 +60,31 @@
       const score = localStorage.getItem("quizScore") || 0;
       const total = localStorage.getItem("totalQuestions") || 0;
       document.getElementById("scoreText").innerText = `Your score: ${score} / ${total}`;
+
+      if (localStorage.getItem('levelCompleted') != null) {
+        console.log("ok this part works")
+        // get stats from level they completed
+        const points = localStorage.getItem('points') || 0;
+  
+        document.getElementById('points-value').textContent = points-(score*50) + " --> " + points + " points";
+        document.getElementById('score-value').textContent = score + "/3";
+        document.getElementById('level-completed').textContent = "🎉 Level Completed!";
+  
+        const popup = document.getElementById('level-popup');
+        popup.classList.remove('hidden');
+        popup.classList.add('visible');
+        
+        // Clear flag so it doesn’t show again
+        localStorage.removeItem('levelCompleted');
+      }
+  
+      
+      document.getElementById('close-popup').addEventListener('click', () => {
+        const popup = document.getElementById('level-popup');
+        popup.classList.remove('visible');
+        popup.classList.add('fade-out');
+        setTimeout(() => popup.remove(), 600);
+      });
     });
 
     function retryQuiz() {

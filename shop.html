@@ -72,12 +72,7 @@
     // === POINTS SYSTEM ===
     let points = parseInt(localStorage.getItem('points')) || 0;
 
-    // Add 100 points on every page visit
-    points += 100;
-    localStorage.setItem('points', points);
 
-    // Update points display
-    document.getElementById("points").textContent = points;
 
     // === HALLOWEEN THEME TOGGLE ===
     const normalToggle = document.getElementById('normal-theme-toggle');

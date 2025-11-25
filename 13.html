@@ -54,10 +54,23 @@
         </p>
     </aside>
     <aside>
-        quiz
+        Caesar Quiz
+
         <!--
         Add a quiz here with an example of caesar cipher, like "encrypt this" or "decrypt that"
         -->
+
+
+        <form id="quizForm" class="quiz-form">
+        <div class="question">
+            <p><b>Test your knowledge! Can you decode this case-sensitive string that's been shifted 3 letters?</b></p>
+            <p>Fdhvdu Flskhu</p>
+            <label><input type="text" id="caesarQuiz" value=""></label>
+        </div>
+        <button type="button" class="btn" onclick="submitQuiz()">Check Answer</button>
+        <p id="quizCheck"></p>
+        </form>
+
     </aside>
     <aside>
         <div style="text-align:center;">
@@ -83,6 +96,15 @@
         }
       });
     });
+
+    function submitQuiz() {
+        console.log(document.getElementById('caesarQuiz').value);
+        if (document.getElementById('caesarQuiz').value ==="Caesar Cipher") {
+            document.getElementById('quizCheck').textContent = "Correct! Great job!";
+        } else {
+            document.getElementById('quizCheck').textContent = "Not quite, try again! Make sure your capitalization is correct.";
+        }
+    }
   </script>
 </body>
 

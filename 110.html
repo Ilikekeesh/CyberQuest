@@ -139,8 +139,12 @@
         if (answer && answer.value === "1") score++;
       }
 
+      let tempPoints = (50*score + Number(localStorage.getItem("points")));
+
       localStorage.setItem("quizScore", score);
+      localStorage.setItem("levelCompleted", true);
       localStorage.setItem("totalQuestions", totalQuestions);
+      localStorage.setItem("points", tempPoints);
       window.location.href = "results.html";
     }
   </script>

@@ -29,60 +29,18 @@
         <img src="Drawing-1.sketchpad.png" alt="CyberQuest" id="loading"></div>
     </div>
 
-        <!-- Level Complete Popup by CHATGPT -->
-    <div id="level-popup" class="popup hidden">
-        <div class="popup-content">
-        <h2 id="level-completed">🎉 Level Completed!</h2>
-        <p id="score-popup"><strong>Score:</strong> <span id="score-value">0</span></p>
-        <p id="xp-popup"><strong>XP:</strong> <span id="xp-value">0</span></p>
-        <p id="time-popup"><strong>Time:</strong> <span id="time-value">00:00</span></p>
-        <button id="close-popup">Close</button>
-        </div>
-    </div>
-
     <aside>
-
         <p id="studentroom">
-            this is student room
+            Welcome to the student classroom! This is a hub to view your assignments, current performance, and overall class.
         </p>
-        
     </aside>
+
     <footer>
         <div style="margin-left: 2%;">Team Phishify</div>
     </footer>
     <br>
     <script src="transition.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          if (localStorage.getItem('levelCompleted') != null) {
-            // get stats from level they completed
-            const score = localStorage.getItem('points');
-            const xp = localStorage.getItem('xp') || 200;
-            const time = localStorage.getItem('time') || "01:35";
-      
-            document.getElementById('time-value').textContent = time + " seconds";
-            document.getElementById('score-value').textContent = score;
-            document.getElementById('xp-value').textContent = xp;
-            document.getElementById('level-completed').textContent = "🎉 Level " + localStorage.getItem('levelCompleted') + " Completed!";
-      
-            const popup = document.getElementById('level-popup');
-            popup.classList.remove('hidden');
-            popup.classList.add('visible');
-            
-            // Clear flag so it doesn’t show again
-            localStorage.removeItem('levelCompleted');
-          }
-      
-          
-          document.getElementById('close-popup').addEventListener('click', () => {
-            const popup = document.getElementById('level-popup');
-            popup.classList.remove('visible');
-            popup.classList.add('fade-out');
-            setTimeout(() => popup.remove(), 600);
-          });
-        });
-    </script>
 </body>
 
 </html>
