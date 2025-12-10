@@ -50,8 +50,8 @@
             </div>
 
             <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; text-align: center;">
-                <h2>Theme Unlock</h2>
-                <p>Switch to a spooky Halloween color scheme!</p>
+                <h2>Themes</h2>
+                <p>Customize your CyberQuest experience with new colors!</p>
                 <button id="normal-theme-toggle">Activate Classic Theme</button>
                 <button id="dark-theme-toggle">Activate Dark Theme</button>
                 <button id="halloween-theme-toggle">Activate Halloween Theme</button>
@@ -71,7 +71,7 @@
     <script>
     // === POINTS SYSTEM ===
     let points = parseInt(localStorage.getItem('points')) || 0;
-
+    document.getElementById('points').textContent=points;
 
 
     // === HALLOWEEN THEME TOGGLE ===
@@ -80,26 +80,89 @@
     const halloweenToggle = document.getElementById('halloween-theme-toggle');
     const autumnToggle = document.getElementById('autumn-theme-toggle');
 
+
     // Toggle theme on button click
     normalToggle.addEventListener('click', () => {
         purgeThemes();
         localStorage.setItem('theme', 'normal');
     });
+
+
+    if (localStorage.getItem('theme-dark-unlock')!=="true"){
+        document.getElementById('dark-theme-toggle').textContent="Dark Theme - 100";
+        if (localStorage.getItem('points')<=100){
+            document.getElementById('dark-theme-toggle').style.backgroundColor = "black";
+        }
+    }
     darkToggle.addEventListener('click', () => {
+        if (localStorage.getItem('theme-dark-unlock')==="true") {
         purgeThemes();
         body.classList.add('theme-dark');
         localStorage.setItem('theme', 'dark');
+        
+        } else {
+            if (localStorage.getItem('points')>=100) {
+            localStorage.setItem('theme-dark-unlock', 'true');
+            document.getElementById('dark-theme-toggle').textContent="Activate Dark Theme";
+            localStorage.setItem('points',localStorage.getItem('points')-100);
+            let points = parseInt(localStorage.getItem('points')) || 0;
+            document.getElementById('points').textContent=points;
+            } else {
+                stop;
+            }
+        }
     });
+
+    if (localStorage.getItem('theme-halloween-unlock')!=="true"){
+        document.getElementById('halloween-theme-toggle').textContent="Halloween Theme - 250";
+        if (localStorage.getItem('points')<=250){
+            document.getElementById('halloween-theme-toggle').style.backgroundColor = "black";
+        }
+    }
     halloweenToggle.addEventListener('click', () => {
+        if (localStorage.getItem('theme-halloween-unlock')==="true") {
         purgeThemes();
         body.classList.add('theme-halloween');
         localStorage.setItem('theme', 'halloween');
+        
+        } else {
+            if (localStorage.getItem('points')>=250) {
+            localStorage.setItem('theme-halloween-unlock', 'true');
+            document.getElementById('halloween-theme-toggle').textContent="Activate Halloween Theme";
+            localStorage.setItem('points',localStorage.getItem('points')-250);
+            let points = parseInt(localStorage.getItem('points')) || 0;
+            document.getElementById('points').textContent=points;
+            } else {
+                stop;
+            }
+        }
     });
+
+    if (localStorage.getItem('theme-autumn-unlock')!=="true"){
+        document.getElementById('autumn-theme-toggle').textContent="Autumn Theme - 250";
+        if (localStorage.getItem('points')<=250){
+            document.getElementById('autumn-theme-toggle').style.backgroundColor = "black";
+        }
+    }
     autumnToggle.addEventListener('click', () => {
+        if (localStorage.getItem('theme-autumn-unlock')==="true") {
         purgeThemes();
         body.classList.add('theme-autumn');
         localStorage.setItem('theme', 'autumn');
+        
+        } else {
+            if (localStorage.getItem('points')>=250) {
+            localStorage.setItem('theme-autumn-unlock', 'true');
+            document.getElementById('autumn-theme-toggle').textContent="Activate Autumn Theme";
+            localStorage.setItem('points',localStorage.getItem('points')-250);
+            let points = parseInt(localStorage.getItem('points')) || 0;
+            document.getElementById('points').textContent=points;
+            } else {
+                stop;
+            }
+        }
     });
+
 
     function purgeThemes() {
         body.classList.remove('theme-normal','theme-dark','theme-halloween','theme-autumn');
