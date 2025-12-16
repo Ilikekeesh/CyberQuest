@@ -55,6 +55,7 @@
   <br>
   <script src="transition.js"></script>
   <script>
+    localStorage.setItem("progress",10)
     // Display the stored score
     window.addEventListener("load", () => {
       const score = localStorage.getItem("quizScore") || 0;

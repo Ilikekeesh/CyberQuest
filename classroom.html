@@ -30,9 +30,25 @@
     </div>
 
     <aside>
+        <h1>Student Classroom</h1>
         <p id="studentroom">
-            Welcome to the student classroom! This is a hub to view your assignments, current performance, and overall class.
+            Welcome to the Student Classroom! This is a hub to view your assignments, current performance, and overall class.
         </p>
+        <h2 id="studentroom">
+            Student: <span id="username">Anonymous</span>
+        </h2>
+        <h2 id="studentroom">
+            Points: <span id="points">0</span>
+        </h2>
+    </aside>
+
+
+    <aside>
+        <h2>Content Progress</h2>
+        <div class="xp-bar-container">
+            <div id="xp-bar-fill">
+            </div>
+        </div>
     </aside>
 
     <footer>
@@ -40,6 +56,14 @@
     </footer>
     <br>
     <script src="transition.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById("username").textContent=localStorage.getItem('username');
+        document.getElementById("points").textContent=localStorage.getItem('points');
+        const progress = parseInt(localStorage.getItem('progress')) || 0;
+        document.getElementById("xp-bar-fill").style.width = (progress * 10) + "%";
+    });
+    </script>
 
 </body>
 

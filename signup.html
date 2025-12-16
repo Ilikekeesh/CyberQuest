@@ -265,11 +265,17 @@
         }
         createaccount.addEventListener('click', ()=>{
             localStorage.setItem('points', 0);
+            localStorage.setItem('progress', 0);
             localStorage.setItem('student',true);
+            localStorage.setItem('username', document.getElementById('username').value);
+            console.log(document.getElementById('username').value);
         })
         teachercreateaccount.addEventListener('click', ()=>{
             localStorage.setItem('points',0);
+            localStorage.setItem('progress', 0);
             localStorage.setItem('student',false);
+            localStorage.setItem('username', document.getElementById('teacher-username').value);
+            console.log(document.getElementById('teacher-username').value);
         })
     </script>
 </body>

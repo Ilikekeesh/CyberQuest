@@ -84,6 +84,9 @@
     <br>
     <script src="transition.js"></script>
     <script>
+    if (parseInt(localStorage.getItem("progress"))<3){
+      localStorage.setItem("progress",3)
+    }
     const collapsibles = document.querySelectorAll(".collapsible");
     collapsibles.forEach(btn => {
       btn.addEventListener("click", function() {
